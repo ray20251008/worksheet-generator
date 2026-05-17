@@ -594,10 +594,12 @@ textarea {
 /* A4 紙張滾動容器 */
 .a4-page-wrapper {
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
     padding: 40px 20px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     scroll-behavior: smooth;
 }
 
