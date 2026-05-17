@@ -113,11 +113,10 @@ body {
 .app-container {
     display: flex;
     min-height: 100vh;
-    height: 100vh;
-    overflow: hidden;
+    align-items: flex-start;
 }
 
-/* 側邊設定面板 (Sidebar) */
+/* 側邊設定面板 (Sidebar) - sticky 固定 */
 .sidebar-panel {
     width: 420px;
     min-width: 420px;
@@ -129,6 +128,10 @@ body {
     flex-direction: column;
     box-shadow: var(--ui-shadow);
     z-index: 100;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 /* 側邊欄頭部 */
@@ -506,7 +509,7 @@ textarea {
     display: flex;
     flex-direction: column;
     background: #e9ecef;
-    overflow: hidden;
+    min-width: 0;
 }
 
 .preview-toolbar {
@@ -591,16 +594,13 @@ textarea {
     border-color: #1a202c;
 }
 
-/* A4 紙張滾動容器 */
+/* A4 紙張滾動容器 - 讓瀏覽器自然捲動 */
 .a4-page-wrapper {
     flex: 1;
-    min-height: 0;
-    overflow-y: auto;
     padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    scroll-behavior: smooth;
 }
 
 /* 美化 A4 預覽捲軸 */
