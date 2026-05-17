@@ -506,7 +506,7 @@ textarea {
     display: flex;
     flex-direction: column;
     background: #e9ecef;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .preview-toolbar {
@@ -632,7 +632,7 @@ textarea {
     justify-content: space-between;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     color: var(--theme-text);
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* 學習單標頭區 */
