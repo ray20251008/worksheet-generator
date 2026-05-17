@@ -112,6 +112,7 @@ body {
 /* 3. 主要版面配置 (App Layout) */
 .app-container {
     display: flex;
+    min-height: 100vh;
     height: 100vh;
     overflow: hidden;
 }
@@ -505,7 +506,7 @@ textarea {
     display: flex;
     flex-direction: column;
     background: #e9ecef;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .preview-toolbar {
