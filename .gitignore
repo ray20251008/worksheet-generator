@@ -1,0 +1,14 @@
+app.js.bak 
+*.bak 
+search.py 
+docx_text.txt 
+sanitary_text.txt 
+found_photo.txt 
+found_photo_all.txt 
+search_photo.py 
+search_photo_all.py 
+extract.py 
+extract_sanitary.py 
+append_css.py 
+append_js.py 
+write_bat_big5.py 

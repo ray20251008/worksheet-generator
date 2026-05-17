@@ -1,0 +1,1583 @@
+/* ==========================================================================
+   🎨 學習單自動產生器 - 全方位精美樣式系統 (Style System)
+   ========================================================================== */
+
+/* 1. 全域變數與重設 */
+:root {
+    /* 系統 UI 變數 (Glassmorphism 儀表板使用) */
+    --ui-bg: rgba(255, 255, 255, 0.75);
+    --ui-border: rgba(255, 255, 255, 0.4);
+    --ui-text: #2d3748;
+    --ui-text-light: #718096;
+    --ui-accent: #6c5ce7;
+    --ui-accent-hover: #5b4bc4;
+    --ui-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+    
+    /* 四大主題預設值 (預設為 溫馨馬卡龍) */
+    --theme-primary: #ff8fa3;
+    --theme-primary-hover: #ff758f;
+    --theme-secondary: #c9e4de;
+    --theme-accent: #ffb3c1;
+    --theme-bg-light: #fff5f6;
+    --theme-border: #ffccd5;
+    --theme-text: #3c2f2f;
+    
+    --header-font: 'Fredoka', 'Noto Sans TC', sans-serif;
+    --body-font: 'Outfit', 'Noto Sans TC', sans-serif;
+}
+
+/* 重設 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: #f0f2f5;
+    background-image: 
+        radial-gradient(#d3d3d3 1px, transparent 1px), 
+        radial-gradient(#d3d3d3 1px, #f0f2f5 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    color: var(--ui-text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 2. 四大主題配色設定 */
+
+/* 🌸 1. 溫馨馬卡龍 (Pastel Cute) */
+.a4-page.pastel-theme {
+    --theme-primary: #ff8fa3;
+    --theme-primary-hover: #ff758f;
+    --theme-secondary: #ffe5ec;
+    --theme-accent: #c9e4de;
+    --theme-bg-light: #fff8f9;
+    --theme-border: #ffccd5;
+    --theme-text: #4e3535;
+    background-color: #ffffff;
+}
+
+/* 🌲 2. 森林大自然 (Forest Nature) */
+.a4-page.forest-theme {
+    --theme-primary: #2d6a4f;
+    --theme-primary-hover: #1b4332;
+    --theme-secondary: #d8f3dc;
+    --theme-accent: #b7e4c7;
+    --theme-bg-light: #f4faf6;
+    --theme-border: #95d5b2;
+    --theme-text: #1b262c;
+    background-color: #ffffff;
+}
+
+/* 📘 3. 經典學院風 (Classic School) */
+.a4-page.classic-theme {
+    --theme-primary: #1a73e8;
+    --theme-primary-hover: #155cb4;
+    --theme-secondary: #e8f0fe;
+    --theme-accent: #d2e3fc;
+    --theme-bg-light: #f8fafd;
+    --theme-border: #aecbfa;
+    --theme-text: #202124;
+    background-color: #ffffff;
+}
+
+/* 🍊 4. 陽光朝氣橘 (Sunset Orange) */
+.a4-page.orange-theme {
+    --theme-primary: #ff7b00;
+    --theme-primary-hover: #e06a00;
+    --theme-secondary: #ffe5d9;
+    --theme-accent: #ffd7ba;
+    --theme-bg-light: #fffbf9;
+    --theme-border: #fec89a;
+    --theme-text: #3c220f;
+    background-color: #ffffff;
+}
+
+/* 🖤 影印機黑白複印優化模式 (當啟用時，覆寫所有主題配色為黑白灰) */
+.a4-page.bw-optimized {
+    --theme-primary: #000000 !important;
+    --theme-primary-hover: #333333 !important;
+    --theme-secondary: #f0f0f0 !important;
+    --theme-accent: #e0e0e0 !important;
+    --theme-bg-light: #ffffff !important;
+    --theme-border: #666666 !important;
+    --theme-text: #000000 !important;
+    background-color: #ffffff !important;
+    filter: grayscale(100%);
+}
+
+/* 3. 主要版面配置 (App Layout) */
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 側邊設定面板 (Sidebar) */
+.sidebar-panel {
+    width: 420px;
+    min-width: 420px;
+    background: var(--ui-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-right: 1px solid var(--ui-border);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--ui-shadow);
+    z-index: 100;
+}
+
+/* 側邊欄頭部 */
+.sidebar-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--ui-border);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.magic-icon {
+    font-size: 26px;
+    color: var(--ui-accent);
+    animation: sparkle 2.5s infinite alternate;
+}
+
+.logo h1 {
+    font-family: var(--header-font);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--ui-accent) 0%, #a29bfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    font-size: 12px;
+    color: var(--ui-text-light);
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+/* 側邊欄滾動區 */
+.sidebar-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 自訂美化滾動條 */
+.sidebar-body::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sidebar-body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.sidebar-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* 設定區塊卡片 */
+.config-section {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+.config-section:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.section-title {
+    font-family: var(--header-font);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ui-text);
+}
+
+.section-title i {
+    color: var(--ui-accent);
+}
+
+/* 視覺風格選取器網格 */
+.theme-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.theme-btn {
+    border: 2px solid transparent;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+    font-family: var(--body-font);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn.active {
+    border-color: var(--theme-primary);
+    background: var(--theme-bg);
+}
+
+.theme-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.theme-dot.pink { background: #ff8fa3; border: 1px solid #ff758f; }
+.theme-dot.green { background: #2d6a4f; border: 1px solid #1b4332; }
+.theme-dot.blue { background: #1a73e8; border: 1px solid #155cb4; }
+.theme-dot.orange { background: #ff7b00; border: 1px solid #e06a00; }
+
+.bw-friendly-toggle {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+/* 輸入框樣式 */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--ui-text);
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 10px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--ui-text-light);
+}
+
+select, textarea, input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    border-radius: 10px;
+    font-family: var(--body-font);
+    font-size: 13px;
+    color: var(--ui-text);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+select {
+    appearance: none;
+    padding-right: 32px;
+    cursor: pointer;
+}
+
+select:focus, textarea:focus, input[type="password"]:focus {
+    border-color: var(--ui-accent);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+
+textarea {
+    height: 90px;
+    resize: none;
+    line-height: 1.5;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* 複選按鈕群組 */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-item, .toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.checkbox-item input, .toggle-container input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--ui-accent);
+    cursor: pointer;
+}
+
+/* API 金鑰摺疊區 */
+.key-section {
+    border: 1px solid rgba(108, 92, 231, 0.2);
+    background: rgba(108, 92, 231, 0.02);
+}
+
+.key-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.key-header .section-title {
+    margin-bottom: 0;
+}
+
+.toggle-arrow {
+    font-size: 12px;
+    color: var(--ui-text-light);
+    transition: transform 0.3s ease;
+}
+
+.key-header.open .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+.key-body {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(108, 92, 231, 0.15);
+    transition: all 0.3s ease;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.key-body.collapsed {
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.key-tip {
+    font-size: 11px;
+    color: var(--ui-text-light);
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ui-text-light);
+    font-size: 12px;
+}
+
+.input-with-icon input {
+    padding-left: 32px;
+}
+
+.save-status {
+    display: block;
+    font-size: 10px;
+    color: #4caf50;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* 側邊欄尾部 */
+.sidebar-footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--ui-border);
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--ui-accent) 0%, #8c7ae6 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    background: linear-gradient(135deg, var(--ui-accent-hover) 0%, #7f6fd4 100%);
+}
+
+.primary-btn:active {
+    transform: translateY(1px);
+}
+
+.secondary-btn {
+    background: #ffffff;
+    border: 1.5px solid var(--ui-accent);
+    color: var(--ui-accent);
+}
+
+.secondary-btn:hover {
+    background: rgba(108, 92, 231, 0.05);
+}
+
+/* 4. 即時預覽面板 (Preview Panel) */
+.preview-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #e9ecef;
+    overflow: hidden;
+}
+
+.preview-toolbar {
+    height: 64px;
+    padding: 0 24px;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.preview-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #e8f0fe;
+    color: #1a73e8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4);
+    animation: pulse 1.6s infinite;
+}
+
+.instruction-text {
+    font-size: 12px;
+    color: var(--ui-text-light);
+    font-weight: 500;
+}
+
+.toolbar-right {
+    display: flex;
+    gap: 8px;
+}
+
+.tool-btn {
+    padding: 8px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 10px;
+    font-family: var(--body-font);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ui-text);
+    transition: all 0.2s ease;
+}
+
+.tool-btn:hover {
+    background: #f8f9fa;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.print-btn {
+    background: #2d3748;
+    color: #ffffff;
+    border-color: #2d3748;
+}
+
+.print-btn:hover {
+    background: #1a202c;
+    border-color: #1a202c;
+}
+
+/* A4 紙張滾動容器 */
+.a4-page-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    scroll-behavior: smooth;
+}
+
+/* 美化 A4 預覽捲軸 */
+.a4-page-wrapper::-webkit-scrollbar {
+    width: 10px;
+}
+.a4-page-wrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.02);
+}
+.a4-page-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+}
+.a4-page-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* 5. 擬真 A4 紙張樣式 (Simulated A4 Paper Sheet) */
+.a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm 18mm;
+    box-shadow: 
+        0 1px 3px rgba(0,0,0,0.05), 
+        0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: var(--theme-text);
+    overflow: hidden;
+}
+
+/* 學習單標頭區 */
+.worksheet-header {
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* 裝飾性雙圓點背景 (增添童趣精緻感) */
+.decoration-dots-left, .decoration-dots-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-80%);
+    width: 28px;
+    height: 8px;
+    background-image: radial-gradient(var(--theme-primary) 3px, transparent 3px);
+    background-size: 8px 8px;
+    opacity: 0.75;
+}
+.decoration-dots-left { left: 10px; }
+.decoration-dots-right { right: 10px; }
+
+.header-main {
+    padding: 0 40px;
+}
+
+.worksheet-title {
+    font-family: var(--header-font);
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--theme-primary);
+    line-height: 1.3;
+    outline: none;
+    border: 1px dashed transparent;
+    border-radius: 6px;
+    padding: 2px 6px;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.worksheet-title:hover, .worksheet-subtitle:hover {
+    border-color: var(--theme-primary);
+    background: var(--theme-bg-light);
+}
+
+.worksheet-subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ui-text-light);
+    margin-top: 6px;
+    outline: none;
+    border: 1px dashed transparent;
+    border-radius: 4px;
+    padding: 2px 6px;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+/* 學生基本資訊填寫欄位 */
+.student-info-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.info-item {
+    padding: 4px 10px;
+    border-radius: 6px;
+    min-width: 80px;
+}
+
+.info-item.border-dotted {
+    border: 1.5px dashed var(--theme-border);
+    background-color: var(--theme-bg-light);
+}
+
+.info-label {
+    outline: none;
+    display: inline-block;
+}
+
+/* 學習單主體與大單元 */
+.worksheet-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ws-section {
+    position: relative;
+    border: 1.5px solid transparent;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.ws-section:hover {
+    border-color: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.005);
+}
+
+.ws-section-title {
+    font-family: var(--header-font);
+    font-size: 15px;
+    font-weight: 800;
+    color: #ffffff;
+    background: var(--theme-primary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    outline: none;
+}
+
+.ws-section-title i {
+    font-size: 14px;
+}
+
+/* 引言故事框 */
+.passage-box {
+    background: var(--theme-bg-light);
+    border-left: 4px solid var(--theme-primary);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    outline: none;
+    border-top: 1px solid var(--theme-secondary);
+    border-right: 1px solid var(--theme-secondary);
+    border-bottom: 1px solid var(--theme-secondary);
+}
+
+/* 題目列表排版 */
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* 單一題目容器 */
+.question-item {
+    position: relative;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: all 0.25s ease;
+}
+
+.question-item:hover {
+    background: var(--theme-bg-light);
+    border-color: var(--theme-secondary);
+}
+
+/* 題目編輯與控制按鈕 (Hover 時顯示) */
+.item-controls {
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.question-item:hover .item-controls {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.control-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: var(--ui-text-light);
+    transition: all 0.15s ease;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+}
+
+.control-btn.del-btn:hover {
+    background: #ff4757;
+    color: #ffffff;
+}
+
+.control-btn.move-btn {
+    cursor: grab;
+}
+
+/* 題幹樣式 */
+.question-text {
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    outline: none;
+    padding-right: 48px; /* 避開控制按鈕 */
+}
+
+/* 選擇題選項 */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding-left: 18px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+}
+
+/* 可愛的多選框/單選框複製品 (以利列印) */
+.option-box {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid var(--theme-primary);
+    border-radius: 50%; /* 圓圈圓角 */
+    flex-shrink: 0;
+}
+
+.option-text {
+    outline: none;
+    flex: 1;
+}
+
+/* 情境作答題 (思考與手繪) */
+.scenario-answer-box {
+    margin-top: 10px;
+    border: 1.5px dashed var(--theme-border);
+    border-radius: 10px;
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme-bg-light);
+    position: relative;
+    padding: 8px;
+}
+
+.answer-placeholder {
+    font-size: 11px;
+    color: var(--ui-text-light);
+    opacity: 0.65;
+    text-align: center;
+    font-style: italic;
+    pointer-events: none;
+}
+
+/* 回應文字欄線 (特教/小學常用輔助書寫線) */
+.answer-lines {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px 14px;
+}
+
+.answer-line {
+    border-bottom: 1px dashed var(--theme-border);
+    height: 12px;
+}
+
+/* 我的宣告/實踐承諾區 */
+.pledge-container {
+    background: var(--theme-bg-light);
+    border: 2px solid var(--theme-primary);
+    border-radius: 14px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pledge-text {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    outline: none;
+}
+
+.pledge-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 4px;
+}
+
+.pledge-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.pledge-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--theme-primary);
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.pledge-item span {
+    outline: none;
+    flex: 1;
+}
+
+.pledge-signature {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--theme-border);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--ui-text);
+}
+
+.signature-line {
+    outline: none;
+}
+
+/* 學習單尾部標記 */
+.worksheet-footer {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--theme-border);
+    font-size: 10.5px;
+    color: var(--ui-text-light);
+    font-weight: 500;
+}
+
+.worksheet-footer span {
+    outline: none;
+}
+
+/* 6. 動態載入載入畫面 (Loading Modal) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.spinner-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    width: 380px;
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-overlay.active .spinner-card {
+    transform: scale(1);
+}
+
+.magic-spinner {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(108, 92, 231, 0.1);
+    border-radius: 50%;
+}
+
+.magic-spinner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: var(--ui-accent);
+    border-right-color: var(--ui-accent);
+    animation: rotate 1s linear infinite;
+}
+
+.spinner-sparkle {
+    font-size: 32px;
+    color: var(--ui-accent);
+    animation: pulse 1.2s infinite alternate;
+}
+
+.spinner-card h3 {
+    font-family: var(--header-font);
+    font-size: 20px;
+    color: var(--ui-text);
+    margin-bottom: 8px;
+}
+
+.spinner-card p {
+    font-size: 12.5px;
+    color: var(--ui-text-light);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.loading-bar-wrapper {
+    width: 100%;
+    height: 6px;
+    background: #f1f2f6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loading-bar {
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--ui-accent) 0%, #a29bfe 100%);
+    border-radius: 10px;
+    animation: loading-slide 1.8s infinite ease-in-out;
+}
+
+/* 7. Keyframe 動畫集 */
+@keyframes sparkle {
+    0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px var(--ui-accent)); }
+    100% { transform: scale(1.15) rotate(15deg); filter: drop-shadow(0 0 8px #a29bfe); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(26, 115, 232, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes loading-slide {
+    0% { transform: translateX(-100%); width: 30%; }
+    50% { width: 60%; }
+    100% { transform: translateX(200%); width: 30%; }
+}
+
+
+/* ==========================================================================
+   🧩 7.5. 特教圖卡與視覺輔助模式專屬樣式 (Special Education Visual Mode)
+   ========================================================================== */
+
+/* 當學習單開啟視覺輔助模式時的整體優化 */
+.a4-page.visual-mode {
+    font-size: 15px;
+}
+
+.a4-page.visual-mode .worksheet-title {
+    font-size: 32px; /* 標題放大 */
+}
+
+.a4-page.visual-mode .worksheet-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.a4-page.visual-mode .ws-section-title {
+    font-size: 18px;
+    padding: 8px 16px;
+}
+
+.a4-page.visual-mode .passage-box {
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 600;
+}
+
+.a4-page.visual-mode .question-text {
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+/* 視覺圖卡選項排版 */
+.a4-page.visual-mode .options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-left: 0;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.a4-page.visual-mode .option-item {
+    background: var(--theme-bg-light);
+    border: 2.5px solid var(--theme-border);
+    border-radius: 16px;
+    padding: 16px;
+    width: calc(50% - 8px);
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.a4-page.visual-mode .option-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    border-color: var(--theme-primary);
+    background: #ffffff;
+}
+
+/* 圖片/圖標容器 */
+.a4-page.visual-mode .option-pic-container {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible; /* 讓懸浮按鈕超出顯示 */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.a4-page.visual-mode .option-pic-container .emoji-glyph {
+    font-size: 4rem;
+    line-height: 1;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.a4-page.visual-mode .option-pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* 圖片拖曳中狀態高亮 */
+.a4-page.visual-mode .option-pic-container.drag-over {
+    border: 3px dashed var(--ui-accent) !important;
+    background: rgba(108, 92, 231, 0.08) !important;
+}
+
+/* 圖片更換浮動按鈕 */
+.pic-edit-btn, .pic-reset-btn {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: none;
+    background: var(--ui-accent);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.pic-edit-btn {
+    right: -10px;
+    bottom: -10px;
+}
+
+.pic-reset-btn {
+    left: -10px;
+    bottom: -10px;
+    background: #ff4757;
+}
+
+.option-pic-container:hover .pic-edit-btn,
+.option-pic-container:hover .pic-reset-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pic-edit-btn:hover { background: var(--ui-accent-hover); transform: scale(1.15) !important; }
+.pic-reset-btn:hover { background: #e04040; transform: scale(1.15) !important; }
+
+/* 大型作答圈圈 */
+.a4-page.visual-mode .option-box {
+    width: 24px;
+    height: 24px;
+    border: 2.5px solid var(--theme-primary);
+    border-radius: 50%;
+    margin-top: 6px;
+    background: #ffffff;
+}
+
+.a4-page.visual-mode .option-text {
+    font-size: 15px;
+    font-weight: 700;
+    outline: none;
+    width: 100%;
+}
+
+/* 情境題大畫框與手繪提示 */
+.a4-page.visual-mode .scenario-answer-box {
+    min-height: 150px; /* 增加作答空間 */
+    border: 2.5px dashed var(--theme-primary);
+    background-color: #fcfcfd;
+    background-image: radial-gradient(var(--theme-border) 1.2px, transparent 1.2px);
+    background-size: 14px 14px;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.a4-page.visual-mode .scenario-answer-box::before {
+    content: '\f1fc'; /* FontAwesome Paintbrush */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--theme-border);
+    opacity: 0.55;
+    animation: bounce-gentle 2s infinite alternate;
+}
+
+.a4-page.visual-mode .scenario-answer-box::after {
+    content: '🎨 請在框框內畫出（或寫出）你的做法！';
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ui-text-light);
+    opacity: 0.7;
+}
+
+.a4-page.visual-mode .scenario-answer-box .answer-lines {
+    display: none; /* 視覺模式下隱藏文字線 */
+}
+
+@keyframes bounce-gentle {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-6px); }
+}
+
+/* 實踐宣告區優化 */
+.a4-page.visual-mode .pledge-container {
+    padding: 18px 22px;
+    border-width: 2.5px;
+}
+
+.a4-page.visual-mode .pledge-text {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.a4-page.visual-mode .pledge-item {
+    font-size: 14px;
+    font-weight: 600;
+    gap: 12px;
+    padding: 6px 0;
+}
+
+.a4-page.visual-mode .pledge-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid var(--theme-primary);
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+   🖨️ 8. 完美 A4 列印與 PDF 輸出專屬樣式 (Print Optimization Stylesheet)
+   ========================================================================== */
+@media print {
+    /* 1. 隱藏瀏覽器 UI、網頁控制面板與提示 */
+    body, html {
+        background: #ffffff !important;
+        color: #000000 !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    .sidebar-panel,
+    .preview-toolbar,
+    .modal-overlay,
+    .item-controls,
+    .instruction-text,
+    .btn-print {
+        display: none !important;
+    }
+    
+    /* 2. 重設主要排版，讓 A4 頁面單獨呈現 */
+    .app-container {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    .preview-panel {
+        background: #ffffff !important;
+        overflow: visible !important;
+        height: auto !important;
+        display: block !important;
+    }
+    
+    .a4-page-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+    }
+    
+    /* 3. A4 實體配置，消除螢幕專用陰影與邊界 */
+    .a4-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    /* 4. 強制瀏覽器列印背景圖、顏色與框線 (確保馬卡龍或黑白樣式能完美列印) */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    /* 5. 分頁設定，避免大題目被攔腰截斷 */
+    .ws-section {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .question-item {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    .pledge-container {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+}
+
+
+/* ==========================================================================
+   🏫 財團法人天主教嘉義教區附設雲林縣私立華聖家園-瑞翔社區日間作業所 客製化樣式
+   ========================================================================== */
+
+.header-org-title {
+    text-align: center;
+    font-size: 13.5px;
+    color: #495057;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    outline: none;
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+    padding-bottom: 4px;
+}
+
+.header-main-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.header-title-container {
+    flex: 1;
+    text-align: left;
+}
+
+.header-checklist-box {
+    border: 1.5px solid var(--theme-primary, #6f42c1);
+    border-radius: 6px;
+    padding: 6px 12px;
+    background-color: #fff;
+    flex-shrink: 0;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.chk-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: #212529;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.chk-square {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid #495057;
+    border-radius: 3px;
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    background-color: #fff;
+    position: relative;
+}
+
+.chk-item:hover .chk-square {
+    border-color: var(--theme-primary, #6f42c1);
+    transform: scale(1.08);
+}
+
+.chk-square.checked {
+    background-color: var(--theme-primary, #6f42c1) !important;
+    border-color: var(--theme-primary, #6f42c1) !important;
+}
+
+.chk-square.checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+}
+
+/* Evaluation box at the footer */
+.evaluation-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.evaluation-box {
+    border: 1.5px solid var(--theme-primary, #6f42c1);
+    border-radius: 6px;
+    padding: 6px 14px;
+    background-color: #fff;
+    display: flex;
+    gap: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.chk-item.inline {
+    display: inline-flex;
+}
+
+/* Special Ed visual mode adaptations */
+.a4-page.visual-mode .header-org-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--theme-primary);
+    border-bottom-width: 1.5px;
+}
+
+.a4-page.visual-mode .header-checklist-box,
+.a4-page.visual-mode .evaluation-box {
+    border-width: 2.5px;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background-color: #fffaf0; /* Warm background for Special Ed */
+}
+
+.a4-page.visual-mode .chk-item {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #2b2d42;
+}
+
+.a4-page.visual-mode .chk-square {
+    width: 18px;
+    height: 18px;
+    border-width: 2px;
+    border-radius: 4px;
+}
+
+.a4-page.visual-mode .chk-square.checked::after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border-width: 0 2.2px 2.2px 0;
+}

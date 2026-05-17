@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 學習單自動產生器 | 專為教師設計的智慧教學助手</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Control Panel -->
+        <aside class="sidebar-panel">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-wand-magic-sparkles magic-icon"></i>
+                    <h1>學習單產生器</h1>
+                </div>
+                <p class="tagline">輕鬆為學生打造精美、趣味且實用的客製化學習單</p>
+            </div>
+            
+            <div class="sidebar-body">
+                <!-- Theme Selection -->
+                <section class="config-section">
+                    <h3 class="section-title"><i class="fa-solid fa-palette"></i> 1. 選擇視覺風格</h3>
+                    <div class="theme-selector-grid">
+                        <button class="theme-btn active" data-theme="pastel" style="--theme-primary: #ff8fa3; --theme-bg: #fff0f3;">
+                            <span class="theme-dot pink"></span>
+                            <span class="theme-name">溫馨馬卡龍</span>
+                        </button>
+                        <button class="theme-btn" data-theme="forest" style="--theme-primary: #2d6a4f; --theme-bg: #d8f3dc;">
+                            <span class="theme-dot green"></span>
+                            <span class="theme-name">森林大自然</span>
+                        </button>
+                        <button class="theme-btn" data-theme="classic" style="--theme-primary: #1a73e8; --theme-bg: #e8f0fe;">
+                            <span class="theme-dot blue"></span>
+                            <span class="theme-name">經典學院風</span>
+                        </button>
+                        <button class="theme-btn" data-theme="orange" style="--theme-primary: #ff7b00; --theme-bg: #ffe5d9;">
+                            <span class="theme-dot orange"></span>
+                            <span class="theme-name">陽光朝氣橘</span>
+                        </button>
+                    </div>
+                    
+                    <div class="bw-friendly-toggle">
+                        <label class="toggle-container">
+                            <input type="checkbox" id="bw-mode">
+                            <span class="checkmark"></span>
+                            <span class="toggle-label"><i class="fa-solid fa-print"></i> 影印機黑白複印優化模式</span>
+                        </label>
+                    </div>
+                </section>
+                
+                <!-- Topic Selection & Custom Prompt -->
+                <section class="config-section">
+                    <h3 class="section-title"><i class="fa-solid fa-graduation-cap"></i> 2. 選擇課程主題</h3>
+                    <div class="form-group">
+                        <label for="preset-topic">選擇內建實用領域範本：</label>
+                        <div class="select-wrapper">
+                            <select id="preset-topic">
+                                <option value="" disabled selected>-- 請選擇一個課程領域 --</option>
+                                <option value="emotion">😊 認識情緒的世界 (情緒教育)</option>
+                                <option value="boundary">🛡️ 我的身體我作主 (身體界線與安全)</option>
+                                <option value="power-food">⚡ 居家安全與食品安全 (用電與飲食安全)</option>
+                                <option value="sanitary">🌸 衛生棉使用與衛生 (自我照顧)</option>
+                                <option value="cough">😷 A1-咳嗽禮節與個人衛生</option>
+                                <option value="escape">🏃 火災與安全逃生模擬</option>
+                                <option value="drink">🥤 我的飲料我做主 (健康減糖)</option>
+                                <option value="habits">🧹 養成生活好習慣 (環境整潔)</option>
+                                <option value="custom">✍️ [自訂內容] 由下方文字或 AI 產生</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="custom-content">輸入課程重點文字 / 參考資料 (或讓 AI 延伸)：</label>
+                        <textarea id="custom-content" placeholder="例：過期的食品不能吃、吃完東西要刷牙、不要隨便觸摸別人的私密部位..."></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="grade-level">目標對象/年級：</label>
+                            <div class="select-wrapper">
+                                <select id="grade-level">
+                                    <option value="special">🌱 特教學生 / 資源班</option>
+                                    <option value="low">🎒 國小低年級</option>
+                                    <option value="mid">🏫 國小中高年級</option>
+                                    <option value="high">🎓 國中 / 實用生活級</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label for="question-count">題目數量：</label>
+                            <div class="select-wrapper">
+                                <select id="question-count">
+                                    <option value="3">3 題 (精簡一頁版)</option>
+                                    <option value="5" selected>5 題 (標準豐富版)</option>
+                                    <option value="7">7 題 (進階挑戰版)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Layout Configurations -->
+                <section class="config-section">
+                    <h3 class="section-title"><i class="fa-solid fa-list-check"></i> 3. 學習單單元配置</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item special-mode-label" style="background: rgba(108, 92, 231, 0.12); padding: 8px 12px; border-radius: 10px; border: 1.5px dashed var(--ui-accent); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; width: 100%;">
+                            <input type="checkbox" id="layout-special-mode">
+                            <span style="font-weight: 700; color: var(--ui-accent);"><i class="fa-solid fa-face-smile-wink"></i> 💡 特教圖卡 / 視覺輔助模式</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="layout-header" checked>
+                            <span>基本資訊欄 (校名/班級/座號/姓名/日期)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="layout-intro" checked>
+                            <span>暖身引導與精美故事小引言</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="layout-mcq" checked>
+                            <span>核心知識大考驗 (選擇題/是非題)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="layout-scenario" checked>
+                            <span>生活情境變變變 (思考與繪畫題)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="layout-pledge" checked>
+                            <span>我的生活實踐宣言 (打勾/著色承諾)</span>
+                        </label>
+                    </div>
+                </section>
+                
+                <!-- AI API Key Settings -->
+                <section class="config-section key-section">
+                    <div class="key-header" id="key-toggle">
+                        <h3 class="section-title"><i class="fa-solid fa-key"></i> 4. 串接 Gemini AI (可選)</h3>
+                        <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+                    </div>
+                    <div class="key-body collapsed" id="key-settings-container">
+                        <p class="key-tip">使用 Gemini API Key，即可根據您任意輸入的特殊課程內容，自動創作出全新且極富創意的互動題型！</p>
+                        <div class="form-group">
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="gemini-api-key" placeholder="在此貼上您的 Gemini API 金鑰 (AI_KEY)...">
+                            </div>
+                            <span class="save-status" id="key-save-status">將安全地儲存於此電腦的 LocalStorage</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="action-btn secondary-btn" id="btn-offline-gen">
+                    <i class="fa-solid fa-bolt"></i> 快速套用範本 (離線可用)
+                </button>
+                <button class="action-btn primary-btn" id="btn-ai-gen">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> ⚡ AI 智能生成
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Live Preview Panel -->
+        <main class="preview-panel">
+            <div class="preview-toolbar">
+                <div class="toolbar-left">
+                    <span class="preview-badge"><span class="pulse-dot"></span> 即時預覽畫面</span>
+                    <span class="instruction-text"><i class="fa-solid fa-circle-info"></i> 學習單上的文字與標題都可以點擊直接進行修改喔！</span>
+                </div>
+                <div class="toolbar-right">
+                    <button class="tool-btn" id="btn-add-question" title="新增自訂題目"><i class="fa-solid fa-plus"></i> 新增題目</button>
+                    <button class="tool-btn" id="btn-clear" title="清空全部重做"><i class="fa-solid fa-trash-can"></i> 清空內容</button>
+                    <button class="tool-btn print-btn" id="btn-print" title="列印或存成 PDF 檔案"><i class="fa-solid fa-print"></i> 列印 / 儲存 PDF</button>
+                </div>
+            </div>
+            
+            <!-- A4 Page Container -->
+            <div class="a4-page-wrapper">
+                <div class="a4-page pastel-theme" id="worksheet-a4">
+                    
+                    <!-- 1. Header Info Section -->
+                    <header class="worksheet-header" id="ws-header-sec">
+                        <div class="decoration-dots-left"></div>
+                        <div class="decoration-dots-right"></div>
+                        
+                        <!-- Top Organization Title -->
+                        <div class="header-org-title" contenteditable="true" id="ws-org-title">財團法人天主教嘉義教區附設雲林縣私立華聖家園-瑞翔社區日間作業所</div>
+                        
+                        <div class="header-main-row">
+                            <div class="header-title-container">
+                                <h2 class="worksheet-title" contenteditable="true" id="ws-title">我的情緒萬花筒學習單</h2>
+                                <p class="worksheet-subtitle" contenteditable="true" id="ws-subtitle">探索內心世界，做情緒的小主人！</p>
+                            </div>
+                            
+                            <!-- Reading Checklist Box -->
+                            <div class="header-checklist-box">
+                                <div class="chk-item"><div class="chk-square"></div> <span contenteditable="true">自己閱讀完成</span></div>
+                                <div class="chk-item"><div class="chk-square"></div> <span contenteditable="true">經過解說完成</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="student-info-bar" id="ws-info-bar">
+                            <div class="info-item border-dotted">
+                                <span class="info-label" contenteditable="true">___年___班</span>
+                            </div>
+                            <div class="info-item border-dotted">
+                                <span class="info-label" contenteditable="true">座號：___</span>
+                            </div>
+                            <div class="info-item border-dotted">
+                                <span class="info-label" contenteditable="true">姓名：___________</span>
+                            </div>
+                            <div class="info-item border-dotted">
+                                <span class="info-label" contenteditable="true">日期：___年___月___日</span>
+                            </div>
+                        </div>
+                    </header>
+                    
+                    <div class="worksheet-body">
+                        <!-- 2. Warm-up Passage Section -->
+                        <section class="ws-section" id="ws-intro-sec">
+                            <h3 class="ws-section-title" contenteditable="true"><i class="fa-solid fa-comment-dots"></i> 💡 暖身引導：情境對話筒</h3>
+                            <div class="passage-box" contenteditable="true" id="ws-intro-text">
+                                我們每個人都有「喜、怒、哀、樂」等各種不同的情緒。情緒沒有對與錯，就像大自然的天氣，有時候是晴天，有時候會下雨。當我們生氣或難過時，可以深呼吸、聽音樂或跟好朋友聊聊天，讓心情慢慢平靜下來喔！
+                            </div>
+                        </section>
+                        
+                        <!-- 3. MCQ / Choice Question Section -->
+                        <section class="ws-section" id="ws-mcq-sec">
+                            <h3 class="ws-section-title" contenteditable="true"><i class="fa-solid fa-circle-question"></i> ✏️ 核心知識挑戰賽</h3>
+                            <div class="questions-list" id="mcq-list">
+                                <!-- Predefined MCQ Questions will go here -->
+                            </div>
+                        </section>
+                        
+                        <!-- 4. Scenario Question Section -->
+                        <section class="ws-section" id="ws-scenario-sec">
+                            <h3 class="ws-section-title" contenteditable="true"><i class="fa-solid fa-palette"></i> 🎨 生活情境小劇場</h3>
+                            <div class="questions-list" id="scenario-list">
+                                <!-- Predefined Scenario Questions will go here -->
+                            </div>
+                        </section>
+                        
+                        <!-- 5. Self Action Pledge Section -->
+                        <section class="ws-section" id="ws-pledge-sec">
+                            <h3 class="ws-section-title" contenteditable="true"><i class="fa-solid fa-heart"></i> 💪 我的生活實踐承諾書</h3>
+                            <div class="pledge-container">
+                                <div class="pledge-text" contenteditable="true" id="ws-pledge-text">
+                                    我承諾當我感到不舒服、生氣或難過時，我會試著這樣做：
+                                </div>
+                                <ul class="pledge-list" id="ws-pledge-list">
+                                    <li class="pledge-item">
+                                        <div class="pledge-checkbox"></div>
+                                        <span contenteditable="true">深呼吸 10 下，讓自己先冷靜下來。</span>
+                                    </li>
+                                    <li class="pledge-item">
+                                        <div class="pledge-checkbox"></div>
+                                        <span contenteditable="true">用溫和有禮貌的語言，跟對方表達我的感覺。</span>
+                                    </li>
+                                    <li class="pledge-item">
+                                        <div class="pledge-checkbox"></div>
+                                        <span contenteditable="true">尋找信任的師長、家長或好朋友聊聊我的心情。</span>
+                                    </li>
+                                </ul>
+                                <div class="pledge-signature">
+                                    <div class="signature-line" contenteditable="true">小達人親自簽名：________________</div>
+                                    <div class="signature-line" contenteditable="true">家長/老師簽章：________________</div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Bottom Evaluation Box -->
+                        <div class="evaluation-row">
+                            <div class="evaluation-box">
+                                <div class="chk-item inline"><div class="chk-square"></div> <span contenteditable="true">通過</span></div>
+                                <div class="chk-item inline"><div class="chk-square"></div> <span contenteditable="true">未通過</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Footer branding, hidden in print if desired but looks neat -->
+                    <footer class="worksheet-footer">
+                        <span contenteditable="true">🌱 天天學習，快樂成長！ | 本學習單由「學習單自動產生器」智慧產生</span>
+                    </footer>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- AI Loading Modal -->
+    <div class="modal-overlay" id="loading-modal">
+        <div class="spinner-card">
+            <div class="magic-spinner">
+                <i class="fa-solid fa-wand-magic-sparkles spinner-sparkle"></i>
+            </div>
+            <h3>正在施展 AI 魔法...</h3>
+            <p>正在分析您的課程重點，為您客製化精美的題目與插畫版面...</p>
+            <div class="loading-bar-wrapper">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
