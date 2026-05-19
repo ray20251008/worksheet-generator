@@ -1423,9 +1423,12 @@ textarea {
     
     /* 5. 分頁設定，避免大題目被攔腰截斷 */
     .ws-section {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
         margin-bottom: 20px !important;
+    }
+    
+    .ws-section-title {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
     }
     
     .question-item {
