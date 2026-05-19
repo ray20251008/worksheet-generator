@@ -1431,9 +1431,14 @@ textarea {
         break-after: avoid !important;
     }
     
+    .questions-list {
+        display: block !important;
+    }
+    
     .question-item {
         page-break-inside: avoid !important;
         break-inside: avoid !important;
+        margin-bottom: 14px !important;
     }
     
     .pledge-container {
