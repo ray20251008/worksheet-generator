@@ -151,9 +151,10 @@
                     <div class="key-body collapsed" id="key-settings-container">
                         <p class="key-tip">使用 Gemini API Key，即可根據您任意輸入的特殊課程內容，自動創作出全新且極富創意的互動題型！</p>
                         <div class="form-group">
-                            <div class="input-with-icon">
+                            <div class="input-with-icon" style="position: relative;">
                                 <i class="fa-solid fa-lock"></i>
-                                <input type="password" id="gemini-api-key" placeholder="在此貼上您的 Gemini API 金鑰 (AI_KEY)...">
+                                <input type="password" id="gemini-api-key" placeholder="在此貼上您的 Gemini API 金鑰 (AI_KEY)..." style="padding-right: 35px;">
+                                <i class="fa-solid fa-eye" id="toggle-api-key" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #888;" title="顯示/隱藏金鑰" onclick="const input = document.getElementById('gemini-api-key'); if(input.type === 'password'){ input.type = 'text'; this.classList.remove('fa-eye'); this.classList.add('fa-eye-slash'); } else { input.type = 'password'; this.classList.remove('fa-eye-slash'); this.classList.add('fa-eye'); }"></i>
                             </div>
                             <span class="save-status" id="key-save-status">將安全地儲存於此電腦的 LocalStorage</span>
                         </div>
