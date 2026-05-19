@@ -1427,8 +1427,7 @@ textarea {
     }
     
     .ws-section-title {
-        page-break-after: avoid !important;
-        break-after: avoid !important;
+        margin-bottom: 8px !important;
     }
     
     .questions-list {
@@ -1436,14 +1435,14 @@ textarea {
     }
     
     .question-item {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
         margin-bottom: 14px !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
     }
     
     .pledge-container {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
     }
 }
 
