@@ -1405,12 +1405,13 @@ textarea {
         padding: 0 !important;
         margin: 0 !important;
         border-radius: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
+        display: block !important;
         background: #ffffff !important;
         color: #000000 !important;
-        page-break-after: avoid;
-        page-break-inside: avoid;
+    }
+
+    .worksheet-body {
+        display: block !important;
     }
     
     /* 4. 強制瀏覽器列印背景圖、顏色與框線 (確保馬卡龍或黑白樣式能完美列印) */
@@ -1422,19 +1423,26 @@ textarea {
     
     /* 5. 分頁設定，避免大題目被攔腰截斷 */
     .ws-section {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .ws-section-title {
+        margin-bottom: 8px !important;
+    }
+    
+    .questions-list {
+        display: block !important;
     }
     
     .question-item {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        margin-bottom: 14px !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
     }
     
     .pledge-container {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
     }
 }
 
