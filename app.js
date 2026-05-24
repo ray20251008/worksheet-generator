@@ -3,99 +3,99 @@
    ========================================================================== */
 
 const presetTemplates = {
-    emotion: {
-        title: "我的心情小書本",
-        subtitle: "看圖選一選，認識我們的心情！",
-        intro: "我們有不同的心情。生氣時可以深呼吸，難過時可以抱抱布偶或找老師聊聊喔！",
+    health: {
+        title: "健康生活小達人",
+        subtitle: "勤洗手、戴口罩，身體健康沒煩惱！",
+        intro: "個人衛生和健康是我們每天生活最重要的事情。感冒時要戴口罩，咳嗽時用手肘遮住口鼻，吃東西前要把手洗乾淨。多喝白開水，少喝甜甜的含糖飲料，才能保護我們的牙齒，讓身體充滿活力喔！",
         mcqs: [
             {
-                question: "生氣時，怎麼做比較好？",
-                options: ["深呼吸、數到十", "大聲哭鬧、摔書本", "搶玩具、罵同學", "躲起來不理人"],
-                emojis: ["🧘", "😡", "🤬", "🤫"]
+                question: "想咳嗽或打噴嚏時，如果沒有衛生紙遮擋，該怎麼做？",
+                options: ["彎曲手肘用衣袖遮住口鼻", "用雙手手掌捂住口鼻", "對著旁邊同學大聲咳", "不用遮擋直接咳出來"],
+                emojis: ["💪", "🖐", "🗣", "💨"]
             },
             {
-                question: "難過想哭時，可以怎麼做？",
-                options: ["找老師聊聊心事", "打人或摔東西出氣", "躲在角落不說話", "假裝很高興沒事"],
-                emojis: ["🤝", "👊", "🤫", "🎭"]
+                question: "擤完鼻涕的髒衛生紙，應該要怎麼處理？",
+                options: ["丟進垃圾桶並用肥皂洗手", "放口袋或抽屜下次再用", "隨手丟在地上或桌上", "拿給同學看或借給同學"],
+                emojis: ["🗑️", "🦘", "🚯", "🤝"]
             },
             {
-                question: "同學在哭，我們可以怎麼做？",
-                options: ["拿衛生紙安慰他", "笑他很膽小", "大聲取笑他", "動手打他"],
-                emojis: ["🤝", "😂", "📢", "👊"]
+                question: "當我們覺得口渴時，喝什麼對身體最健康？",
+                options: ["乾淨的白開水", "甜甜的汽水或可樂", "冰涼的珍珠奶茶", "色素運動飲料"],
+                emojis: ["💧", "🥤", "🧋", "🧃"]
             },
             {
-                question: "考試拿了一百分，心情會怎麼樣？",
-                options: ["開心與興奮", "害怕與發抖", "生氣與發火", "難過與失望"],
-                emojis: ["🎉", "😨", "😡", "😔"]
+                question: "吃東西前或上完廁所後，最重要的事情是什麼？",
+                options: ["用肥皂把手清洗乾淨", "用衣服把手擦乾淨", "照鏡子看自己漂不漂亮", "直接用手拿東西吃"],
+                emojis: ["🧼", "🎽", "🪞", "😋"]
             },
             {
-                question: "怎麼做能天天都有好心情？",
-                options: ["早睡早起多運動", "熬夜打電動玩具", "一不順心就生氣", "天天吃糖果零食"],
-                emojis: ["🏃", "🎮", "⚡", "🍭"]
+                question: "戴口罩時，哪一個做法是正確的？",
+                options: ["口罩要蓋住口鼻與下巴，鼻樑金屬條壓緊", "只蓋住嘴巴，鼻子露在外面呼吸", "把口罩挂在耳朵上當裝飾", "一個口罩戴很久髒了也不用換"],
+                emojis: ["😷", "👃", "👂", "🩹"]
             }
         ],
         scenarios: [
             {
-                scenario: "戶外體育課突然下雨，改在教室上課。",
-                question: "👉 請畫出你現在的心情！"
+                scenario: "隔壁同學一直咳嗽卻沒戴口罩，還對著桌子打噴嚏。",
+                question: "👉 請畫出你該怎麼禮貌提醒他戴口罩？"
             },
             {
-                scenario: "排隊時，後面的同學不小心撞到你。",
-                question: "👉 請畫出你會怎麼跟他說？"
+                scenario: "同學約你放學一起去買全糖的珍珠奶茶。",
+                question: "👉 請畫出你會怎麼選更健康的飲料？"
             }
         ],
         pledge: {
-            title: "生氣或難過時，我會試著這樣做：",
+            title: "我會做好個人衛生，愛護身體健康：",
             items: [
-                "深呼吸 10 下，讓自己冷靜。",
-                "用溫和有禮貌的話跟對方說。",
-                "找老師或爸爸媽媽幫忙。"
+                "咳嗽或打噴嚏時用手肘遮擋，髒衛生紙立即丟垃圾桶並洗手。",
+                "勤用肥皂洗手，多喝白開水，少喝含糖飲料。",
+                "感冒或身體不舒服時，會主動且正確地配戴口罩。"
             ]
         }
     },
-    boundary: {
-        title: "身體紅綠燈學習單",
-        subtitle: "我的身體我保護，勇敢說不行！",
-        intro: "身體是我們最寶貴的寶物。泳衣遮住的地方是私密部位，絕對不能讓別人看或摸喔！",
+    gender: {
+        title: "尊重與平等小天使",
+        subtitle: "保護我的身體，尊重別人的界線！",
+        intro: "每個人都是獨一無二的，無論男生還是女生，都有表達心情 and 保護身體的權利。我們的身體非常珍貴，泳衣遮住的私密部位絕對不能給別人看或觸摸。當我們覺得不舒服時，要勇敢說「不行」，並且立刻尋求大人的協助。",
         mcqs: [
             {
-                question: "哪裡是不能給別人看或摸的「私密處」？",
-                options: ["泳衣遮住的地方", "我們的手掌", "肩膀和背部", "膝蓋和小腿"],
+                question: "哪裡是我們不能隨便給別人看或觸摸的「私密部位」？",
+                options: ["泳衣和內衣褲遮住的地方", "我們的手掌", "肩膀和背部", "膝蓋和小腿"],
                 emojis: ["🩱", "🤝", "肩", "🦵"]
             },
             {
-                question: "別人給你糖果，要摸你的私密處，該怎麼辦？",
-                options: ["大聲說不行並快跑", "拿糖果給他摸", "害怕忍耐不說", "當作兩個人的秘密"],
-                emojis: ["🛡️", "🍭", "😰", "🤫"]
+                question: "如果有人想觸摸你的私密部位，並說這是「兩個人之間的秘密」，該怎麼辦？",
+                options: ["大聲拒絕並立刻跑去告訴信任的大人", "聽對方的話，乖乖配合", "覺得害怕但忍耐不說", "接受他的禮物或糖果"],
+                emojis: ["🛡️", "🙇", "😰", "🍭"]
             },
             {
-                question: "關於我們身體的界線，哪一個是對的？",
-                options: ["每個人的身體都要尊重", "熟人就可以隨便摸我", "朋友抱我不能拒絕", "被碰一下就要打回去"],
-                emojis: ["❤️", "🖐️", "🫂", "💥"]
+                question: "關於男生 and 女生的情緒表達，哪一個觀念是正確的？",
+                options: ["不論男生女生，難過想哭時都可以哭", "男生不能哭，哭就是膽小鬼", "女生比較容易生氣", "難過時只能躲在角落不理人"],
+                emojis: ["❤️", "😢", "😡", "🤫"]
             },
             {
-                question: "被觸摸覺得不舒服或害怕，該怎麼做？",
-                options: ["大叫跑開並告訴大人", "安靜地忍耐下去", "聽對方的話配合他", "絕對不告訴任何人"],
-                emojis: ["🗣️", "🤫", "🙇", "🤐"]
+                question: "當同學在哭泣或難過時，我們可以怎麼做？",
+                options: ["拿衛生紙給他，問他需要幫忙嗎", "在旁邊指指點點笑他", "大聲取笑他愛哭", "當作沒看到，走過去不理他"],
+                emojis: ["🤝", "😂", "📢", "🤫"]
             },
             {
-                question: "誰是你可以信任、能幫你的安全守護者？",
-                options: ["爸爸媽媽和學校老師", "路上的陌生人", "網路上的網友", "威脅你的人"],
-                emojis: ["🩺", "👤", "💻", "🤫"]
+                question: "關於我們身體的自主權，哪一個說法是對的？",
+                options: ["我的身體是我的，覺得不舒服有權利拒絕擁抱", "好朋友或親戚抱我，我絕對不能拒絕", "熟人摸我私密處不用大驚小怪", "被碰一下就要立刻打回去出氣"],
+                emojis: ["🛡️", "🫂", "🖐️", "💥"]
             }
         ],
         scenarios: [
             {
-                scenario: "公車上，有陌生人故意一直摸你的身體。",
-                question: "👉 請畫出你該怎麼保護自己？"
+                scenario: "親戚長輩一直要抱你，但你覺得熱、不喜歡被抱。",
+                question: "👉 請畫出你該怎麼勇敢且有禮貌地拒絕？"
             },
             {
-                scenario: "不喜歡被親戚抱抱，但對方一直抱過來。",
-                question: "👉 請畫出你該怎麼勇敢拒絕？"
+                scenario: "有陌生人一直盯著你看，還走過來想要牽你的手。",
+                question: "👉 請畫出你該怎麼保護自己？"
             }
         ],
         pledge: {
-            title: "我會好好愛護自己和別人的身體：",
+            title: "我會好好尊重自己和別人的身體界線：",
             items: [
                 "不讓別人摸私密處，也尊重別人。",
                 "覺得奇怪時勇敢大聲說：不行！",
@@ -103,35 +103,85 @@ const presetTemplates = {
             ]
         }
     },
-    "power-food": {
-        title: "安全與健康小達人",
-        subtitle: "用電安全保平安，健康食物不亂吃！",
-        intro: "濕濕的手不能碰插頭，吃東西前要洗手。過期發霉的食物絕對不能吃喔！",
+    lifelong: {
+        title: "快樂學習小達人",
+        subtitle: "培養生活好習慣，主動探索新知識！",
+        intro: "學習不是只有在學校上課，而是一輩子的事情。養成整理書桌、隨手垃圾分類、物歸原位的好習慣，習慣環境整潔，不僅可以讓我們的學習環境更舒服，也能讓我們做事情更有效率。讓我們每天都保持好奇心，主動學習新事物，做個快樂的學習小達人！",
         mcqs: [
             {
-                question: "拔電器插頭時，怎麼做才安全？",
-                options: ["握住插頭塑膠拔起", "用力拉扯電線", "用濕濕的手去拔", "用鐵絲挖插座孔"],
+                question: "打打掃時間到了，整潔小達人應該抱持什麼態度？",
+                options: ["認真負責，與同學分工合作完成打掃", "把垃圾全部掃到隔壁同學的位置藏起來", "拿著掃把和同學打鬧戲耍", "假裝肚子痛躲在廁所不肯打掃"],
+                emojis: ["🧹", "🚯", "⚔️", "🚽"]
+            },
+            {
+                question: "整理自己的個人書桌或課桌椅時，下面哪一種收納方式最好？",
+                options: ["課本、文具分類放好，抽屜不堆積垃圾", "把所有髒考卷、吃剩的包裝紙全部塞進課桌深處", "書包和文具隨地亂丟，要用時再大喊請媽媽找", "把隔壁同學的文具拿來當作自己的擺放"],
+                emojis: ["📚", "🗄️", "🗣️", "🤝"]
+            },
+            {
+                question: "喝完的飲料鋁箔包或牛奶盒，回收前要怎麼處理？",
+                options: ["沖洗壓扁，丟入紙容器回收桶", "直接連同吸管丟進一般垃圾桶", "隨手塞在桌子底下放一個星期", "直接丟在操場的草地上"],
+                emojis: ["♻️", "🗑️", "🗄️", "🌿"]
+            },
+            {
+                question: "讀書寫功課時如果遇到不會的題目，下列哪一種做法是主動學習的表現？",
+                options: ["主動查字典、看課本或請教老師和同學", "覺得太難了，直接把書本丟掉不寫", "隨便亂猜答案，或者直接抄同學的功課", "大哭大鬧，發脾氣不吃飯"],
+                emojis: ["📖", "🗑️", "📝", "😭"]
+            },
+            {
+                question: "關於養成終生學習的生活素養，下列哪一個是好習慣？",
+                options: ["東西用完物歸原位，每天整理個人物品", "只在老師或父母生氣罵人的時候才收拾", "把房間堆得像垃圾山一樣，不准任何人整理", "髒衣服隨便丟地上，等別人幫忙拿去洗"],
+                emojis: ["✨", "😡", "🌋", "🧺"]
+            }
+        ],
+        scenarios: [
+            {
+                scenario: "打掃時間到了，分在一組的同學卻在一旁玩球、不打掃。",
+                question: "👉 請畫出你該怎麼邀他一起加入打掃？"
+            },
+            {
+                scenario: "放學回家後，你發現書桌上堆滿了雜物、玩具和吃剩的垃圾。",
+                question: "👉 請畫出你整理書桌的具體步驟？"
+            }
+        ],
+        pledge: {
+            title: "我承諾在日常生活中養成學習與整潔的好習慣：",
+            items: [
+                "物品用完一定物歸原位，每日整理個人書桌與抽屜。",
+                "認真完成班級與家中的打掃工作，落實資源回收分類。",
+                "保持好奇心，遇到問題主動看書、發問和尋找答案。"
+            ]
+        }
+    },
+    safety: {
+        title: "安全防護小超人",
+        subtitle: "用電防火注意多，避難逃生要冷靜！",
+        intro: "危險往往發生在不小心的時候。無論是在家裡還是學校，我們都要注意用電安全，手濕濕的絕對不能碰插頭。吃東西前要確認有沒有過期。萬一發生火災，聽到警報器要保持冷靜，採低姿勢沿著安全通道逃生，絕不搭電梯，也不要躲在沒有窗戶的浴室裡！",
+        mcqs: [
+            {
+                question: "火災發生時，如果現場煙霧迷漫，我們應該採取什麼姿勢逃生？",
+                options: ["壓低身體，採取「低姿勢」貼近地面爬行逃生", "站得直直的，快速用百米衝刺跑步", "躺在地上滾動前進", "爬到天花板或桌子上躲避"],
+                emojis: ["🏃", "🧍", "🌀", "🧗"]
+            },
+            {
+                question: "拔電器插頭或使用電器時，下列哪一種行為是安全的？",
+                options: ["握住插頭塑膠座部分拔起", "用力拉扯電線來拔出插頭", "手濕濕的時候直接去碰插頭", "用鐵絲或金屬筷子挖插座孔"],
                 emojis: ["🔌", "💥", "💦", "🥢"]
             },
             {
-                question: "延長線插滿了很多電器，會發生什麼危險？",
-                options: ["電線過熱引起火災", "會讓電器功能變強", "沒有危險非常方便", "可以省下很多電費"],
-                emojis: ["🔥", "⚡", "👍", "💰"]
+                question: "當你打開門準備逃生時，發現門把非常燙手，或者門外走廊已經充滿濃煙與大火，這時該怎麼辦？",
+                options: ["立刻關上門，用衣物塞住門縫防煙，並移動到有窗戶的房間等待救援", "不管三七二十一，深呼吸一口氣直接衝進濃煙大火中", "從窗戶大叫並立刻跳下去", "躲進衣櫃或床底下大哭"],
+                emojis: ["🚪", "🏃", "🪟", "🛌"]
             },
             {
-                question: "買飲料或牛奶時，要先看包裝上的什麼？",
-                options: ["有效日期過期了沒", "漂亮的卡通圖案", "裡面送的玩具", "包裝的顏色"],
-                emojis: ["📅", "🧸", "🎁", "🎨"]
+                question: "撥打消防火警電話「119」報案時，我們最應該向消防人員報出什麼關鍵資訊？",
+                options: ["詳細的火災地址、現場有沒有人受困、以及起火的狀況", "我今年幾歲、在學校考第幾名", "我家有幾隻寵物狗和貓咪", "大聲哭鬧不說話就掛掉電話"],
+                emojis: ["☎️", "🎂", "🐶", "😭"]
             },
             {
                 question: "過期一天的麵包，但沒發霉，可以吃嗎？",
-                options: ["不能吃，有看不見的細菌", "可以吃，烤箱烤過就沒事", "可以吃，才過期一天", "聞起來沒有臭味就可以吃"],
+                options: ["不能吃，有看不見的細菌與毒素", "可以吃，烤箱烤過就沒事", "可以吃，才過期一天", "聞起來沒有臭味就可以吃"],
                 emojis: ["🤮", "🍞", "⏰", "👃"]
-            },
-            {
-                question: "肚子痛發燒了，應該怎麼辦？",
-                options: ["立刻告訴大人看醫生", "忍耐繼續去睡覺", "自己去拿藥吃", "喝汽水壓過去"],
-                emojis: ["🩺", "🛏️", "💊", "🥤"]
             }
         ],
         scenarios: [
@@ -152,289 +202,39 @@ const presetTemplates = {
                 "吃東西前用肥皂仔細洗手。"
             ]
         }
-    },
-    sanitary: {
-        title: "我的青春小秘密",
-        subtitle: "學會使用衛生棉，溫柔照顧身體！",
-        intro: "女生長大會有生理期。我們要學會用衛生棉，保持乾淨。換完要用肥皂洗手喔！",
-        mcqs: [
-            {
-                question: "月經來的時候，大約多久要更換衛生棉？",
-                options: ["每隔 2 到 3 小時更換", "濕透了再更換", "早上一次晚上一次", "兩天換一次省錢"],
-                emojis: ["⏰", "💦", "🛌", "💰"]
-            },
-            {
-                question: "換下來的髒衛生棉，要怎麼丟才對？",
-                options: ["包好丟進垃圾桶", "貼在廁所牆壁上", "丟進馬桶沖掉", "丟在廁所地板上"],
-                emojis: ["🗑️", "🧱", "🚽", "🧹"]
-            },
-            {
-                question: "更換衛生棉前後，最重要的事情是什麼？",
-                options: ["用肥皂把雙手洗乾淨", "噴香水讓手香香的", "照鏡子看臉部", "用濕紙巾擦大腿"],
-                emojis: ["🧼", "🌸", "🪞", "💦"]
-            },
-            {
-                question: "生理期肚子痛不舒服，可以怎麼做？",
-                options: ["喝熱開水或熱敷肚子", "吃冰棒或去跑步", "狂吃甜食糖果", "熬夜打電動"],
-                emojis: ["☕", "🏃", "🍭", "🎮"]
-            },
-            {
-                question: "上課時月經來了、褲子沾到紅血，該怎麼辦？",
-                options: ["找老師或健康中心幫忙", "在教室大哭不上課", "用課本遮住不走動", "忍耐到放學回家"],
-                emojis: ["🩺", "😭", "📖", "🤐"]
-            }
-        ],
-        scenarios: [
-            {
-                scenario: "上體育課前，你發現衛生棉滿了需要更換。",
-                question: "👉 請畫出你該怎麼去廁所更換？"
-            },
-            {
-                scenario: "好朋友今天生理期肚子痛，趴在桌上休息。",
-                question: "👉 請畫出你該怎麼貼心關心她？"
-            }
-        ],
-        pledge: {
-            title: "我會做好生理期衛生，愛護身體：",
-            items: [
-                "換衛生棉前後一定會用肥皂洗手。",
-                "定時更換，包好丟進垃圾桶。",
-                "多喝溫水，讓自己舒服休息。"
-            ]
-        }
-    },
-    cough: {
-        title: "感冒我不怕！咳嗽禮節與個人衛生學習單",
-        subtitle: "學會正確咳嗽禮節，保護自己也保護他人！",
-        intro: "當我們感冒、咳嗽或打噴嚏時，成千上萬的病毒與細菌會隨著飛沫噴射出來。如果沒有做好防護，就很容易傳染給身邊的同學、老師和家人。今天，就讓我們一起學習正確的咳嗽禮節與個人衛生習慣，當個貼心又健康的衛生小達人吧！",
-        mcqs: [
-            {
-                question: "突然想咳嗽但沒有衛生紙遮口鼻時，下列哪一個是「最正確且符合禮貌」的遮擋動作？",
-                options: ["彎曲手肘，用衣袖遮住口鼻", "用雙手手掌緊緊捂住口鼻", "對著旁邊同學的臉咳嗽", "不用遮擋，直接大聲對著空氣咳出來"],
-                emojis: ["💪", "🖐", "🗣", "💨"]
-            },
-            {
-                question: "用完的髒衛生紙（例如擤完鼻涕、擦完口水），應該如何處理才不會散播病菌？",
-                options: ["立刻丟進垃圾桶，並用肥皂洗手", "先放口袋下次再用", "丟在教室地板上", "拿給同學看"],
-                emojis: ["🗑️", "🦘", "🚯", "🤝"]
-            },
-            {
-                question: "關於配戴口罩的正確步驟，下列敘述哪一個是正確的？",
-                options: ["口罩必須蓋住口鼻與下巴，且壓緊鼻樑處的金屬條", "只要蓋住嘴巴就好，鼻子要露出來呼吸比較順暢", "把口罩掛在下巴或一隻耳朵上當裝飾", "口罩反過來戴、或髒了不用換繼續戴一個星期"],
-                emojis: ["😷", "👃", "👂", "🩹"]
-            },
-            {
-                question: "感冒咳嗽時，除了戴口罩，下列哪一項生活習慣可以幫我們快點好起來？",
-                options: ["多喝溫開水、充足睡眠，並避免吃油炸辛辣食物", "去操場跑十圈出一身大汗", "一直吃糖果來止咳", "整天待在密閉不通風的房間裡打電腦"],
-                emojis: ["💧", "🏃", "🍭", "🎮"]
-            },
-            {
-                question: "為什麼咳嗽之後「一定要洗手」？",
-                options: ["因為手上可能沾到了感冒飛沫與病毒，洗手能避免污染別的物品傳染給人", "因為洗手可以讓手變白", "因為手碰水會變涼快", "其實沒有必要，手看起來乾淨就好了"],
-                emojis: ["🧼", "🤍", "🧊", "👀"]
-            }
-        ],
-        scenarios: [
-            {
-                scenario: "上課時，你發現坐在旁邊的同學一直在咳嗽，卻沒有戴口罩，而且還直接對著課桌打噴嚏。",
-                question: "這時候，你會怎麼禮貌地提醒他戴上口罩？請寫下你想對他說的話。"
-            },
-            {
-                scenario: "你感冒喉嚨痛，但今天學校有你最期待的校外教學，你很想跟同學說話，但你一直在咳嗽。",
-                question: "為了保護大家，你在今天的活動中會如何落實咳嗽禮節呢？"
-            }
-        ],
-        pledge: {
-            title: "我承諾在生活中當個有禮貌的「咳嗽禮節小達人」：",
-            items: [
-                "咳嗽或打噴嚏時，一定用衛生紙或手肘遮住口鼻，髒衛生紙立即丟垃圾桶並洗手。",
-                "感冒或身體不舒服時，會主動且正確地配戴口罩，保護班上同學的健康。",
-                "落實「內外夾弓大立腕」洗手步驟，不隨便用未洗的手揉眼睛、摸鼻子或吃東西。"
-            ]
-        }
-    },
-    escape: {
-        title: "火警逃生大演練學習單",
-        subtitle: "火災來臨我不怕，學習正確的避難與逃生觀念！",
-        intro: "火災是非常危險的，當警報器響起或發現火災時，我們必須保持冷靜。記得逃生時要「往安全出口逃生」，如果煙霧很大，要「採低姿勢爬行」。千萬不能搭乘電梯，也不能躲在沒有窗戶的浴室裡。學好逃生技能，才能保護自己和家人的生命安全！",
-        mcqs: [
-            {
-                question: "火災發生時，如果現場煙霧迷漫，我們應該採取什麼樣的姿勢逃生？",
-                options: ["壓低身體，採取「低姿勢」貼近地面爬行逃生", "站得直直的，快速用百米衝刺跑步", "躺在地上滾動前進", "爬到天花板或桌子上躲避"],
-                emojis: ["🏃", "🧍", "🌀", "🧗"]
-            },
-            {
-                question: "火警發生要從公寓高樓層向下逃生時，下列哪一種避難方式是絕對安全的？",
-                options: ["走安全逃生樓梯，一步步向下走", "搭乘大樓電梯，這樣比較快速", "直接從窗戶或陽台跳下去", "躲進浴室裡，因為浴室裡面水很多"],
-                emojis: ["🚶", "🛗", "🪟", "🛁"]
-            },
-            {
-                question: "當你打開門準備逃生時，發現門把非常燙手，或者門外走廊已經充滿濃煙與大火，這時該怎麼辦？",
-                options: ["立刻關上門，用衣物塞住門縫防煙，並移動到有窗戶的房間等待救援", "不管三七二十一，深呼吸一口氣直接衝進濃煙大火中", "從窗戶大叫並立刻跳下去", "躲進衣櫃或床底下大哭"],
-                emojis: ["🚪", "🏃", "🪟", "🛌"]
-            },
-            {
-                question: "撥打消防火警電話「119」報案時，我們最應該向消防人員報出什麼關鍵資訊？",
-                options: ["詳細的火災發生地址、現場有沒有人受困、以及起火的狀況", "我今年幾歲、在學校考第幾名", "我家有幾隻寵物狗和貓咪", "大聲哭鬧不說話就掛掉電話"],
-                emojis: ["☎️", "🎂", "🐶", "😭"]
-            },
-            {
-                question: "下列關於火災預防的敘述，哪一個是「錯誤」的？",
-                options: ["可以在床上玩打火機或隨便點燃蠟燭", "插座上不可插太多插頭，以免過熱起火", "家裡應該安裝住宅用火災警報器（住警器）", "要跟家人一起規劃好居家的防火逃生避難路線"],
-                emojis: ["🔥", "🔌", "🚨", "🗺️"]
-            }
-        ],
-        scenarios: [
-            {
-                scenario: "在學校上課時，突然火災警報器大聲響起，廣播宣布廚房失火了，請大家疏散。",
-                question: "這時候你會帶哪些東西？你會如何跟著老師和同學安全、有秩序地走到操場避難呢？"
-            },
-            {
-                scenario: "如果你在家中睡午覺，突然聞到一股濃烈的塑膠燒焦味，睜開眼發現客廳已經冒出黑煙。",
-                question: "請寫下你當下要做的前三個步驟是什麼？"
-            }
-        ],
-        pledge: {
-            title: "我承諾會牢記防火與逃生知識，遇到狀況冷靜應對：",
-            items: [
-                "絕對不拿打火機、火柴、蠟燭來玩火，注意用電與爐火的安全。",
-                "火災逃生時堅持「小火快逃，濃煙關門」原則，絕不搭電梯，絕不躲浴室。",
-                "積極參與學校的防震與防火逃生演練，記清楚學校與家裡的避難路線及安全出口。"
-            ]
-        }
-    },
-    drink: {
-        title: "我的飲料我做主！健康減糖學習單",
-        subtitle: "認識含糖飲料的健康危機，多喝水健康滿分！",
-        intro: "市面上的珍珠奶茶、汽水、運動飲料雖然甜甜的很好喝，但裡面含有非常多的「精緻糖」。天天喝含糖飲料，不僅會讓我們變胖、蛀牙、還會讓身體變遲鈍、長不高。讓我們一起學會看營養標示，選擇多喝水或無糖飲料，做自己身體的健康國王！",
-        mcqs: [
-            {
-                question: "天天喝很多含糖飲料，可能會對我們的身體健康帶來什麼不好的影響？",
-                options: ["容易蛀牙、身體肥胖、精神不振且長不高", "會讓我們變得跟超人一樣強壯", "能提高智商，讓考試考一百分", "能保護視力，讓皮膚變滑嫩"],
-                emojis: ["🦷", "💪", "💯", "👓"]
-            },
-            {
-                question: "當我們覺得口渴時，最健康、最能幫身體補充水分的「第一名飲料」是什麼？",
-                options: ["乾淨的白開水", "冰涼的可樂或雪碧汽水", "冰淇淋紅茶或黑糖珍珠鮮奶", "甜甜的蘋果汁或運動飲料"],
-                emojis: ["💧", "🥤", "🧋", "🧃"]
-            },
-            {
-                question: "如果真的想喝飲料，在看飲料罐背後的「營養標示」時，我們應該特別注意哪一個數值？",
-                options: ["「糖」的含量", "瓶子的設計好不好看", "飲料的製造商是哪一家", "飲料是不是進口的"],
-                emojis: ["🍬", "🎨", "🏭", "✈️"]
-            },
-            {
-                question: "有些飲料宣稱是「果汁百分之百」，但看成分表卻發現加了很多糖，你覺得它健康嗎？",
-                options: ["不健康，因為額外添加的精緻糖一樣會對身體造成負擔，不宜多喝", "非常健康，可以每天代替白開水拼命喝", "只要是果汁就絕對健康", "完全沒有差別"],
-                emojis: ["❌", "🥤", "🍊", "🟰"]
-            },
-            {
-                question: "下列哪一個方法最適合用來幫自己「慢慢戒掉含糖飲料」？",
-                options: ["隨身攜帶水壺，想喝飲料時先喝三口白開水，或點無糖、微糖的飲料", "每天零用錢全部拿去買飲料喝個夠", "一邊吃糖果一邊喝冰水", "口渴時忍耐不喝任何水分"],
-                emojis: ["🥛", "💰", "🍬", "🤐"]
-            }
-        ],
-        scenarios: [
-            {
-                scenario: "天氣好熱，放學時同學約你一起去買大杯的「全糖珍珠奶茶」消暑，說非常好喝。",
-                question: "這時候，你會怎麼禮貌拒絕對方？或者你會提出什麼更健康的替代點法呢？"
-            },
-            {
-                scenario: "小強不喜歡喝白開水，每天都喝兩瓶汽水，結果牙齒蛀光光，上課也總是昏昏欲睡。",
-                question: "請你幫忙寫下三條建議，告訴小強多喝白開水有什麼好處？"
-            }
-        ],
-        pledge: {
-            title: "我承諾要掌握飲料自主權，當個健康減糖小達人：",
-            items: [
-                "每天多喝白開水，喝水量達到自己體重所需的標準，減少買飲料的次數。",
-                "買飲料時，會主動選擇「無糖」或「微糖」，並仔細閱讀瓶身上的糖分標示。",
-                "不把含糖飲料當水喝，保護牙齒不蛀牙，維持健康的體態與活力！"
-            ]
-        }
-    },
-    habits: {
-        title: "我是環境整潔小達人學習單",
-        subtitle: "做好個人衛生與環境整潔，養成生活好習慣！",
-        intro: "一個整潔乾淨的環境能讓我們住得舒服、學習更專心，而且不容易生病。維護教室與房間的乾淨，不是老師或爸爸媽媽一個人的工作，而是我們大家共同的責任。從垃圾分類、掃地拖地，到整理自己的書桌，每個人都可以成為厲害的「整潔小達人」！",
-        mcqs: [
-            {
-                question: "在班級進行打掃工作時，下列哪一種態度是整潔小達人應該具備的？",
-                options: ["認真負責，與同學分工合作把分配的區域掃乾淨", "把垃圾全部掃到隔壁同學的座位底下隱藏起來", "拿著掃把當武器和同學在走廊打鬧戲耍", "假裝肚子痛躲在廁所不上課也不打掃"],
-                emojis: ["🧹", "🚯", "⚔️", "🚽"]
-            },
-            {
-                question: "喝完的鋁箔包牛奶或飲料盒，在丟掉進行資源回收前，應該怎麼處理才對？",
-                options: ["將裡面的殘汁倒乾淨、稍微用水沖洗並壓扁後，丟入紙容器回收桶", "直接連同吸管整盒丟進一般垃圾桶", "隨手塞在抽屜裡放一個星期", "直接丟在操場的草地上"],
-                emojis: ["♻️", "🗑️", "🗄️", "🌿"]
-            },
-            {
-                question: "整理自己的個人書桌或課桌椅時，下面哪一種收納方式是最好的？",
-                options: ["將課本、文具分類放好，抽屜和桌面上不堆積多餘垃圾", "把所有考卷、吃剩的零食包裝紙全部塞進課桌深處", "書包和文具隨地亂丟，要用時再大喊請媽媽找", "把隔壁同學的文具拿來當作自己的擺放"],
-                emojis: ["📚", "🗄️", "🗣️", "🤝"]
-            },
-            {
-                question: "為什麼我們不能隨地亂丟垃圾，並且要定期倒垃圾和清理積水？",
-                options: ["因為髒亂容易滋生蚊蟲、蒼蠅、蟑螂與老鼠，傳播傳染病", "因為垃圾在地上會變大", "開風吹走就不用理它", "只因為會被老師扣分，沒有別的危害"],
-                emojis: ["🦟", "🎈", "💨", "📝"]
-            },
-            {
-                question: "下列哪一個個人習慣最能展現你的「生活整潔素養」？",
-                options: ["用完東西物歸原位，垃圾隨手分類丟，吃完東西隨手擦桌子", "只在老師或父母生氣罵人的時候才心不甘情不願地收拾", "把自己的房間堆得像垃圾山一樣，不准任何人進去整理", "把髒衣服丟在地上等著別人幫忙撿起來洗"],
-                emojis: ["✨", "😡", "🌋", "🧺"]
-            }
-        ],
-        scenarios: [
-            {
-                scenario: "打掃時間到了，你發現分配跟你一組掃走廊的同學在旁邊玩球、不肯打掃，導致打掃工作做不完。",
-                question: "這時候，你會怎麼跟他說，好讓他願意一起加入打掃工作呢？"
-            },
-            {
-                scenario: "你的房間桌面上堆滿了課本、畫筆、吃完的餅乾屑和玩具，看起來非常混亂，要寫功課時甚至找不到位置。",
-                question: "請寫下你準備「動手整理」這個桌子的具體步驟是什麼？"
-            }
-        ],
-        pledge: {
-            title: "我承諾會用實際行動維護自身衛生與生活環境整潔：",
-            items: [
-                "用完物品一定物歸原位，每天整理個人書桌與抽屜，不堆積垃圾與雜物。",
-                "認真做好班級與家中的打掃工作，落實垃圾分類與資源回收，為地球盡一份心力。",
-                "吃完東西隨手擦拭桌面，保持個人衣物整潔，當個讓人喜愛的生活整潔小達人！"
-            ]
-        }
     }
 };
 
 const presetTemplatesVisual = {
-    cough: {
-        title: "感冒我不怕！咳嗽小禮貌學習單",
-        subtitle: "咳嗽戴口罩，病菌不傳播！",
-        intro: "咳嗽或打噴嚏時，病毒會飛出來。我們要用手肘遮住，戴口罩，勤洗手喔！",
+    health: {
+        title: "健康生活小達人",
+        subtitle: "看圖想一想，圈出正確的答案！",
+        intro: "感冒戴口罩，咳嗽用手肘遮。勤洗手、多喝水，病毒不傳播！",
         mcqs: [
             {
-                question: "突然想咳嗽但沒衛生紙，要用什麼遮住嘴巴？",
-                options: ["彎曲手肘用衣袖遮住", "用雙手手掌捂住", "對著同學的臉咳", "直接對空氣咳出來"],
+                question: "咳嗽沒衛生紙遮，怎麼辦？",
+                options: ["手肘衣袖遮住", "用雙手手掌捂住", "對著同學的臉咳", "直接對空氣咳出來"],
                 emojis: ["💪", "🖐", "🗣", "💨"]
             },
             {
-                question: "擤完鼻涕的髒衛生紙，要怎麼處理？",
+                question: "髒衛生紙要怎麼丟？",
                 options: ["丟進垃圾桶並洗手", "放口袋下次再用", "丟在教室地板上", "拿給同學看"],
                 emojis: ["🗑️", "🦘", "🚯", "🤝"]
             },
             {
-                question: "戴口罩的時候，哪一個做法才是對的？",
-                options: ["蓋住鼻子、嘴巴和下巴", "露出鼻子呼吸", "挂在耳朵上當裝飾", "戴一個星期不換"],
+                question: "口渴喝什麼最健康？",
+                options: ["乾淨的白開水", "甜甜汽水可樂", "冰涼的珍珠奶茶", "運動飲料或果汁"],
+                emojis: ["💧", "🥤", "🧋", "🧃"]
+            },
+            {
+                question: "吃東西前最重要做什麼？",
+                options: ["肥皂把雙手洗乾淨", "衣服把手擦乾", "照鏡子看自己", "直接用手拿著吃"],
+                emojis: ["🧼", "🎽", "🪞", "😋"]
+            },
+            {
+                question: "口罩怎麼戴才對？",
+                options: ["蓋住口鼻與下巴", "露出鼻子呼吸", "掛在耳朵上", "戴一個星期不換"],
                 emojis: ["😷", "👃", "👂", "🩹"]
-            },
-            {
-                question: "感冒生病時，怎麼做能快點好起來？",
-                options: ["多喝溫水、多睡覺休息", "去操場跑步十圈", "一直吃糖果止咳", "天天打電動不睡覺"],
-                emojis: ["💧", "🏃", "🍭", "🎮"]
-            },
-            {
-                question: "為什麼咳嗽之後一定要洗手？",
-                options: ["避免把手上的病毒傳給別人", "可以讓手變白", "讓手變涼快", "手看起來乾淨就好"],
-                emojis: ["🧼", "🤍", "🧊", "👀"]
             }
         ],
         scenarios: [
@@ -443,8 +243,8 @@ const presetTemplatesVisual = {
                 question: "👉 請畫出你該怎麼提醒他戴口罩？"
             },
             {
-                scenario: "你感冒了一直咳嗽，今天要去校外教學。",
-                question: "👉 請畫出你該怎麼做保護大家？"
+                scenario: "同學請你喝大杯全糖珍珠奶茶。",
+                question: "👉 請畫出你該怎麼拒絕或換成無糖？"
             }
         ],
         pledge: {
@@ -456,134 +256,84 @@ const presetTemplatesVisual = {
             ]
         }
     },
-    escape: {
-        title: "火災逃生小演練",
-        subtitle: "火警來臨不驚慌，冷靜安全避難！",
-        intro: "火災很危險，聽到警報器要冷靜。煙霧大時要低姿勢爬行，絕對不能坐電梯喔！",
+    gender: {
+        title: "尊重身體小精靈",
+        subtitle: "保護自己，尊重別人！",
+        intro: "泳衣遮住的部位是私密處，不能給別人摸。不舒服要說不行，找老師聊聊。",
         mcqs: [
             {
-                question: "火災煙霧很大時，逃生要用什麼姿勢？",
-                options: ["身體壓低，低姿勢爬行", "站直身體大步跑步", "在地上滾動前進", "爬到桌子底下躲著"],
-                emojis: ["🏃", "🧍", "🌀", "🧗"]
+                question: "哪裡是不能給人看或摸的私密部位？",
+                options: ["泳衣遮住的地方", "我們的手掌", "肩膀和背部", "膝蓋和小腿"],
+                emojis: ["🩱", "🤝", "肩", "🦵"]
             },
             {
-                question: "火災時要從大樓向下逃生，該怎麼走？",
-                options: ["走安全逃生樓梯向下", "搭乘電梯快速下樓", "直接從陽台跳下去", "躲進浴室裡用水噴"],
-                emojis: ["🚶", "🛗", "🪟", "🛁"]
+                question: "被觸摸私密處，該怎麼辦？",
+                options: ["大聲說不行並告狀", "聽對方的話配合他", "害怕忍耐不說", "當作兩個人的秘密"],
+                emojis: ["🛡️", "🙇", "😰", "🍭"]
             },
             {
-                question: "開門發現門把很燙、都是濃煙，該怎麼辦？",
-                options: ["關門塞門縫，在窗邊等待", "憋氣直接衝進火中", "立刻從窗戶跳下", "躲在床底下大哭"],
-                emojis: ["🚪", "🏃", "🪟", "🛌"]
+                question: "難過想哭時，可以嗎？",
+                options: ["難過哭出來沒關係", "男生絕對不能哭", "女生才可以哭", "假裝很高興沒事"],
+                emojis: ["❤️", "😢", "👧", "🎭"]
             },
             {
-                question: "撥打 119 電話報警時，要說出什麼？",
-                options: ["家裡的詳細住址和起火處", "我幾歲和考第幾名", "我家養幾隻貓貓狗狗", "大哭不說話掛斷電話"],
-                emojis: ["☎️", "🎂", "🐶", "😭"]
+                question: "同學哭泣，我們可以怎麼做？",
+                options: ["拿紙巾安慰他、幫忙他", "在旁邊指指點點笑他", "取笑他膽小愛哭", "不理他直接走開"],
+                emojis: ["🤝", "😂", "📢", "🤫"]
             },
             {
-                question: "關於預防火災，哪一個是「不對」的行為？",
-                options: ["在房間玩火柴或打火機", "插座上不插太多插頭", "家裡安裝火災警報器", "規劃好家裡的逃生路線"],
-                emojis: ["🔥", "🔌", "🚨", "🗺️"]
+                question: "別人抱你覺得熱，可以拒絕嗎？",
+                options: ["可以，勇敢說不行", "一定要讓他抱", "害怕地忍耐下去", "打他一下出氣"],
+                emojis: ["🛡️", "🫂", "😰", "👊"]
             }
         ],
         scenarios: [
             {
-                scenario: "在學校上課時，火災警報器突然響起。",
-                question: "👉 請畫出你該怎麼跟著排隊避難？"
+                scenario: "親戚長輩一直要抱你，但你覺得很不舒服。",
+                question: "👉 請畫出你該怎麼勇敢說不行？"
             },
             {
-                scenario: "在家睡覺聞到焦味，客廳已經都是黑煙。",
-                question: "👉 請畫出你該怎麼安全逃生？"
+                scenario: "陌生人走過來想要牽你的手。",
+                question: "👉 請畫出你該怎麼逃跑找人幫忙？"
             }
         ],
         pledge: {
-            title: "我會記住火災逃生的安全知識：",
+            title: "我會好好尊重自己和別人的身體：",
             items: [
-                "絕對不拿打火機或火柴玩火。",
-                "火災時絕不搭電梯，絕不躲浴室。",
-                "認真參加學校的防災逃生演練。"
+                "不隨便讓人觸摸我的身體，我也尊重別人。",
+                "遇到不舒服的事勇敢大聲說不行。",
+                "立刻告訴老師或爸爸媽媽幫忙。"
             ]
         }
     },
-    drink: {
-        title: "我的健康水飲料",
-        subtitle: "少喝糖水多喝水，身體健康一百分！",
-        intro: "汽水和珍奶甜甜的很好喝，但喝太多會蛀牙變胖喔！多喝白開水最棒了！",
+    lifelong: {
+        title: "我的生活好習慣",
+        subtitle: "養成整潔好習慣，天天快樂學習！",
+        intro: "打掃認真做，物品收乾淨。每天整理書桌，學習更有精神喔！",
         mcqs: [
             {
-                question: "天天喝很多含糖飲料，對身體有什麼壞處？",
-                options: ["容易蛀牙、變胖和長不高", "會讓我們變得跟超人一樣強", "考試每次都拿一百分", "能保護眼睛視力"],
-                emojis: ["🦷", "💪", "💯", "👓"]
-            },
-            {
-                question: "覺得口渴時，喝什麼最健康？",
-                options: ["乾淨的白開水", "甜甜的汽水可樂", "冰涼的珍珠奶茶", "運動飲料或果汁"],
-                emojis: ["💧", "🥤", "🧋", "🧃"]
-            },
-            {
-                question: "想知道飲料甜不甜，要看瓶身後面的什麼？",
-                options: ["「糖」的含量數值", "瓶身圖案好不好看", "飲料是哪一家公司做的", "飲料是不是進口的"],
-                emojis: ["🍬", "🎨", "🏭", "✈️"]
-            },
-            {
-                question: "果汁包裝寫 100% 但加了很多糖，健康嗎？",
-                options: ["不健康，精緻糖加太多不好", "很健康，可以天天代替水喝", "只要是果汁就絕對健康", "完全沒有差別"],
-                emojis: ["❌", "🥤", "🍊", "🟰"]
-            },
-            {
-                question: "怎麼幫自己改掉愛喝甜甜飲料的習慣？",
-                options: ["多喝開水，飲料改選「無糖」", "把零錢全部拿去買飲料", "吃糖果配冰水", "忍耐口渴不喝任何水"],
-                emojis: ["🥛", "💰", "🍬", "🤐"]
-            }
-        ],
-        scenarios: [
-            {
-                scenario: "同學請你喝大杯全糖珍珠奶茶。",
-                question: "👉 請畫出你該怎麼拒絕或換成無糖？"
-            },
-            {
-                scenario: "朋友只喝汽水不喝水，牙齒都蛀光了。",
-                question: "👉 請畫出你該怎麼勸他多喝開水？"
-            }
-        ],
-        pledge: {
-            title: "我會多喝開水、少喝含糖飲料：",
-            items: [
-                "天天多喝白開水，補充水分。",
-                "買飲料時選擇「無糖」或「微糖」。",
-                "不把飲料當水喝，保護牙齒健康。"
-            ]
-        }
-    },
-    habits: {
-        title: "我是整潔小幫手",
-        subtitle: "教室房間整理好，病毒蚊蟲跑光光！",
-        intro: "乾淨的環境讓我們舒服不生病。垃圾要分類，桌椅要整理，大家一起動手做！",
-        mcqs: [
-            {
-                question: "學校打掃時間到了，應該抱持什麼態度？",
-                options: ["分工合作認真掃乾淨", "把垃圾全部掃到同學桌底", "拿掃把和同學打架玩鬧", "躲在廁所不肯去打掃"],
+                question: "打掃時間到了，要怎麼做？",
+                options: ["認真分工掃乾淨", "垃圾掃到同學桌底", "拿掃把玩鬧打架", "躲在廁所不打掃"],
                 emojis: ["🧹", "🚯", "⚔️", "🚽"]
             },
             {
-                question: "喝完的牛奶盒或飲料盒，要怎麼丟才對？",
-                options: ["沖水壓扁丟進回收紙容器", "整盒直接丟進一般垃圾", "塞在抽屜深處不理它", "丟在操場草地上"],
-                emojis: ["♻️", "🗑️", "🗄️", "🌿"]
-            },
-            {
-                question: "整理自己的書桌時，怎麼做最乾淨？",
-                options: ["書本分類放好，桌上沒垃圾", "考卷和垃圾全塞進抽屜", "文具亂丟等媽媽幫忙收", "拿別人的文具來擺放"],
+                question: "書桌要怎麼整理最乾淨？",
+                options: ["書本分類放好，沒垃圾", "考卷垃圾塞抽屜", "亂丢等媽媽收", "搶別人的來擺放"],
                 emojis: ["📚", "🗄️", "🗣️", "🤝"]
             },
             {
-                question: "為什麼垃圾不能亂丟，要定期清理？",
-                options: ["會生蚊子蟑螂老鼠傳染生病", "垃圾在地上會長大", "風會吹走不用理它", "只是怕被扣分而已"],
-                emojis: ["🦟", "🎈", "💨", "📝"]
+                question: "牛奶盒喝完要怎麼收？",
+                options: ["沖水壓扁丟回收", "直接丟進一般垃圾", "隨便塞在桌底下", "丟在草地上"],
+                emojis: ["♻️", "🗑️", "🗄️", "🌿"]
             },
             {
-                question: "哪一個是生活整潔的好習慣？",
-                options: ["東西用完物歸原位，垃圾分類", "被罵了才隨便收一下", "房間堆成垃圾山不整理", "髒衣服亂丟等別人洗"],
+                question: "遇到不會的字或題目，怎麼辦？",
+                options: ["問老師或查字典", "撕掉課本不寫", "抄別人的答案", "生氣大哭大鬧"],
+                emojis: ["📖", "🗑️", "📝", "😭"]
+            },
+            {
+                question: "哪一個是生活好習慣？",
+                options: ["用完收好，垃圾分類丟", "被罵了才隨便收拾", "房間堆成像垃圾山", "髒衣服亂丟地上"],
                 emojis: ["✨", "😡", "🌋", "🧺"]
             }
         ],
@@ -593,16 +343,66 @@ const presetTemplatesVisual = {
                 question: "👉 請畫出你該怎麼找他一起打掃？"
             },
             {
-                scenario: "你的書桌堆滿垃圾、考卷和吃剩的餅乾屑。",
+                scenario: "你的書桌堆滿垃圾和吃剩的餅乾屑。",
                 question: "👉 請畫出你該怎麼動手整理它？"
             }
         ],
         pledge: {
-            title: "我承諾會努力做好個人與環境衛生：",
+            title: "我會做好個人與環境衛生：",
             items: [
-                "用完東西一定收好，收乾淨書桌。",
-                "認真做好打掃，垃圾仔細分類。",
-                "吃完東西隨手擦桌子，保持乾淨。"
+                "用完東西一定收好，擦乾淨書桌。",
+                "認真做好打掃，垃圾分類丟。",
+                "吃完東西隨手擦桌子保持乾淨。"
+            ]
+        }
+    },
+    safety: {
+        title: "安全防護小超人",
+        subtitle: "火災用電要注意，避難冷靜最安全！",
+        intro: "手濕不摸插頭，不玩打火機。火災低姿勢逃生，不坐電梯，不躲浴室！",
+        mcqs: [
+            {
+                question: "火災煙霧大，逃生姿勢是什麼？",
+                options: ["身體壓低貼地爬行", "站直快步跑步", "在地上滾動前進", "爬到桌子上"],
+                emojis: ["🏃", "🧍", "🌀", "🧗"]
+            },
+            {
+                question: "拔插頭時，怎麼做才安全？",
+                options: ["握住塑膠部分拔", "用力拉扯電線", "手濕濕去摸插頭", "用鐵絲挖插座孔"],
+                emojis: ["🔌", "💥", "💦", "🥢"]
+            },
+            {
+                question: "開門發現把手很燙、有濃煙，怎麼辦？",
+                options: ["關門塞門縫等救援", "直接衝進濃煙中", "立刻從窗戶跳下", "躲在衣櫃裡哭"],
+                emojis: ["🚪", "🏃", "🪟", "🛌"]
+            },
+            {
+                question: "打 119 電話，要說出什麼？",
+                options: ["詳細起火的住址", "我幾歲和考試成績", "我家的小狗和小貓", "大哭不說話掛斷"],
+                emojis: ["☎️", "🎂", "🐶", "😭"]
+            },
+            {
+                question: "過期一天的麵包，可以吃嗎？",
+                options: ["不能吃，有細菌", "可以吃，烤過就可以", "可以吃，才過期一天", "聞起來不臭就可以吃"],
+                emojis: ["🤮", "🍞", "⏰", "👃"]
+            }
+        ],
+        scenarios: [
+            {
+                scenario: "弟弟手濕濕準備去插電視插頭。",
+                question: "👉 請畫出你該怎麼阻止他？"
+            },
+            {
+                scenario: "在學校上課，火災警報器突然響起。",
+                question: "👉 請畫出你跟著排隊避難的樣子？"
+            }
+        ],
+        pledge: {
+            title: "我會記住火災與用電安全知識：",
+            items: [
+                "手濕絕對不碰插座，不玩火。",
+                "火災時走樓梯，絕不搭電梯。",
+                "不吃過期或發霉的食物。"
             ]
         }
     }
@@ -674,8 +474,13 @@ const elements = {
     wsPledgeSec: document.getElementById('ws-pledge-sec'),
     wsPledgeText: document.getElementById('ws-pledge-text'),
     wsPledgeList: document.getElementById('ws-pledge-list'),
+    loadingModal: document.getElementById('loading-modal'),
     
-    loadingModal: document.getElementById('loading-modal')
+    fileDropZone: document.getElementById('file-drop-zone'),
+    fileUploadInput: document.getElementById('file-upload-input'),
+    fileInfoBadge: document.getElementById('file-info-badge'),
+    uploadedFileName: document.getElementById('uploaded-file-name'),
+    btnRemoveFile: document.getElementById('btn-remove-file')
 };
 
 // --- 4. 初始化設定 ---
@@ -689,7 +494,7 @@ function init() {
     }
     
     bindEvents();
-    loadPresetTemplate('emotion');
+    loadPresetTemplate('health');
 }
 
 // --- 5. 事件監聽綁定 ---
@@ -744,18 +549,47 @@ function bindEvents() {
         }
     });
     
-    // 下拉範本選取
+    // 下拉範本選取（大標 + 課程名稱輸入）
     elements.presetTopicSelect.addEventListener('change', (e) => {
         const val = e.target.value;
+        const courseNameGroup = document.getElementById('course-name-group');
+        const courseNameInput = document.getElementById('course-name-input');
+
         if (val && val !== 'custom') {
             state.selectedPreset = val;
-            const preset = presetTemplates[val];
-            if (preset) {
-                elements.customContentTextarea.value = `[${preset.title}] 課程重點如下：\n1. ${preset.intro.substring(0, 80)}...\n2. 提供大圖標視覺卡片、支援圖示自主修改與自訂圖片上傳。`;
+            // 顯示課程名稱輸入框
+            courseNameGroup.style.display = 'block';
+            courseNameInput.focus();
+
+            // 載入範本
+            loadPresetTemplate(val);
+
+            // 若已輸入過課程名稱，立即套用
+            if (courseNameInput.value.trim()) {
+                elements.wsTitle.textContent = courseNameInput.value.trim();
             }
+        } else {
+            courseNameGroup.style.display = 'none';
         }
     });
-    
+
+    // 課程名稱輸入框 → 即時更新學習單標題
+    const courseNameInput = document.getElementById('course-name-input');
+    if (courseNameInput) {
+        courseNameInput.addEventListener('input', (e) => {
+            const name = e.target.value.trim();
+            if (name) {
+                elements.wsTitle.textContent = name;
+            } else {
+                // 若清空，恢復範本預設標題
+                const val = elements.presetTopicSelect.value;
+                if (val && presetTemplates[val]) {
+                    elements.wsTitle.textContent = presetTemplates[val].title;
+                }
+            }
+        });
+    }
+
     // 區塊佈局開關
     const layoutCheckboxes = [
         { el: elements.layoutHeader, target: elements.wsHeaderSec },
@@ -781,6 +615,45 @@ function bindEvents() {
     elements.btnPrint.addEventListener('click', () => {
         window.print();
     });
+    
+    // 檔案拖曳與上傳
+    if (elements.fileDropZone) {
+        elements.fileDropZone.addEventListener('click', () => {
+            elements.fileUploadInput.click();
+        });
+        
+        elements.fileDropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            elements.fileDropZone.classList.add('drag-over');
+        });
+        
+        elements.fileDropZone.addEventListener('dragleave', () => {
+            elements.fileDropZone.classList.remove('drag-over');
+        });
+        
+        elements.fileDropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            elements.fileDropZone.classList.remove('drag-over');
+            if (e.dataTransfer.files.length > 0) {
+                handleFileSelect(e.dataTransfer.files[0]);
+            }
+        });
+    }
+    
+    if (elements.fileUploadInput) {
+        elements.fileUploadInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFileSelect(e.target.files[0]);
+            }
+        });
+    }
+    
+    if (elements.btnRemoveFile) {
+        elements.btnRemoveFile.addEventListener('click', (e) => {
+            e.stopPropagation();
+            clearUploadedFile();
+        });
+    }
 }
 
 // --- 6. 學習單渲染與樣式管理 ---
@@ -1289,7 +1162,7 @@ JSON 格式範例：
 `;
 
     try {
-        const response = await fetch(`https://generativetutorial-v1.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -1381,6 +1254,110 @@ function showLoading(show, text = "") {
     } else {
         elements.loadingModal.classList.remove('active');
     }
+}
+
+// --- 12. 檔案解析處理與輔助函數 ---
+function handleFileSelect(file) {
+    const isPdf = file.type === 'application/pdf' || file.name.endsWith('.pdf');
+    const isDocx = file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || file.name.endsWith('.docx');
+    
+    if (!isPdf && !isDocx) {
+        alert('請上傳 PDF 或 Word (.docx) 格式的檔案！');
+        return;
+    }
+    
+    // 顯示檔案資訊
+    elements.uploadedFileName.textContent = file.name;
+    elements.fileInfoBadge.style.display = 'flex';
+    
+    // 顯示載入畫面
+    showLoading(true, '請稍候，系統正在本地解析您的課程教材文字...');
+    
+    const reader = new FileReader();
+    reader.onload = async function(e) {
+        try {
+            const arrayBuffer = e.target.result;
+            let extractedText = '';
+            
+            if (isPdf) {
+                extractedText = await parsePdfText(arrayBuffer);
+            } else if (isDocx) {
+                extractedText = await parseDocxText(arrayBuffer);
+            }
+            
+            if (!extractedText || extractedText.trim().length === 0) {
+                throw new Error('未從檔案中解析出任何文字內容。');
+            }
+            
+            // 自動切換到自訂主題並填入文字
+            elements.presetTopicSelect.value = 'custom';
+            elements.customContentTextarea.value = extractedText;
+            
+            // 觸發自訂主題的事件，以利系統反應
+            const event = new Event('change');
+            elements.presetTopicSelect.dispatchEvent(event);
+            
+            showLoading(false);
+        } catch (error) {
+            console.error('檔案解析失敗:', error);
+            alert('解析檔案失敗，請確認檔案是否受保護、加密或內容為純掃描圖片：' + error.message);
+            clearUploadedFile();
+            showLoading(false);
+        }
+    };
+    
+    reader.onerror = function() {
+        alert('讀取檔案時出錯！');
+        clearUploadedFile();
+        showLoading(false);
+    };
+    
+    reader.readAsArrayBuffer(file);
+}
+
+function clearUploadedFile() {
+    if (elements.fileUploadInput) elements.fileUploadInput.value = '';
+    if (elements.uploadedFileName) elements.uploadedFileName.textContent = '';
+    if (elements.fileInfoBadge) elements.fileInfoBadge.style.display = 'none';
+}
+
+async function parsePdfText(arrayBuffer) {
+    const pdfjsLib = window['pdfjs-dist/build/pdf'];
+    if (!pdfjsLib) {
+        throw new Error('PDF 解析庫未成功載入，請確認網路連線。');
+    }
+    
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+    const pdf = await loadingTask.promise;
+    let fullText = '';
+    const maxPages = Math.min(pdf.numPages, 15);
+    
+    for (let i = 1; i <= maxPages; i++) {
+        const page = await pdf.getPage(i);
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items.map(item => item.str).join(' ');
+        fullText += pageText + '\n';
+    }
+    
+    return fullText;
+}
+
+async function parseDocxText(arrayBuffer) {
+    if (!window.mammoth) {
+        throw new Error('Word 解析庫 (Mammoth) 未成功載入，請確認網路連線。');
+    }
+    
+    return new Promise((resolve, reject) => {
+        window.mammoth.extractRawText({ arrayBuffer: arrayBuffer })
+            .then(function(result) {
+                resolve(result.value);
+            })
+            .catch(function(err) {
+                reject(err);
+            });
+    });
 }
 
 // 啟動應用

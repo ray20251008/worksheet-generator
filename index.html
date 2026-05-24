@@ -68,16 +68,41 @@
                         <div class="select-wrapper">
                             <select id="preset-topic">
                                 <option value="" disabled selected>-- 請選擇一個課程領域 --</option>
-                                <option value="emotion">😊 認識情緒的世界 (情緒教育)</option>
-                                <option value="boundary">🛡️ 我的身體我作主 (身體界線與安全)</option>
-                                <option value="power-food">⚡ 居家安全與食品安全 (用電與飲食安全)</option>
-                                <option value="sanitary">🌸 衛生棉使用與衛生 (自我照顧)</option>
-                                <option value="cough">😷 A1-咳嗽禮節與個人衛生</option>
-                                <option value="escape">🏃 火災與安全逃生模擬</option>
-                                <option value="drink">🥤 我的飲料我做主 (健康減糖)</option>
-                                <option value="habits">🧹 養成生活好習慣 (環境整潔)</option>
-                                <option value="custom">✍️ [自訂內容] 由下方文字或 AI 產生</option>
+                                <optgroup label="🛡️ 性平教育">
+                                    <option value="gender">載入性平教育範本</option>
+                                </optgroup>
+                                <optgroup label="🧼 衛生教育">
+                                    <option value="health">載入衛生教育範本</option>
+                                </optgroup>
+                                <optgroup label="📚 終生學習">
+                                    <option value="lifelong">載入終生學習範本</option>
+                                </optgroup>
+                                <optgroup label="🚨 安全教育">
+                                    <option value="safety">載入安全教育範本</option>
+                                </optgroup>
                             </select>
+                        </div>
+                    </div>
+                    
+                    <!-- 自訂課程名稱輸入框（選擇大標後顯示） -->
+                    <div class="form-group" id="course-name-group" style="display:none;">
+                        <label for="course-name-input">✏️ 請輸入這堂課的課程名稱：</label>
+                        <input type="text" id="course-name-input" placeholder="例如：衛生棉使用教學、人際互動與界線..." style="width:100%; padding:10px 12px; border:1.5px solid rgba(0,0,0,0.08); background:#fff; border-radius:10px; font-size:13px; outline:none; font-family:inherit;">
+                        <span style="font-size:11px; color:#888; margin-top:4px; display:block;">💡 輸入後，學習單標題將自動更新為您的課程名稱</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>上傳教材檔案 (PDF 或 Word 檔)：</label>
+                        <div class="file-upload-zone" id="file-drop-zone">
+                            <i class="fa-solid fa-file-import upload-icon"></i>
+                            <div class="upload-text">點擊選擇檔案 或 拖曳檔案至此</div>
+                            <div class="upload-subtext">支援 .pdf, .docx 格式</div>
+                            <input type="file" id="file-upload-input" accept=".pdf,.docx" style="display: none;">
+                        </div>
+                        <div class="file-info-badge" id="file-info-badge" style="display: none;">
+                            <i class="fa-solid fa-file-invoice file-icon"></i>
+                            <span class="file-name" id="uploaded-file-name"></span>
+                            <button class="file-remove-btn" id="btn-remove-file" type="button" title="移除檔案"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                     </div>
                     
@@ -304,6 +329,10 @@
             </div>
         </div>
     </div>
+    
+    <!-- PDF.js & Mammoth.js for client-side document parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
     
     <!-- Custom JS -->
     <script src="app.js"></script>
