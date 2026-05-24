@@ -414,7 +414,7 @@ const state = {
     activeTheme: 'pastel',
     bwMode: false,
     visualMode: false, // 特教圖卡/視覺輔助模式
-    apiKey: '',
+    apiKey: 'AIzaSyB9elMJdtiyBmeYELAdpESoU9wgpUSrcLM',
     selectedPreset: '',
     customImages: {}, // 格式為 { 'qIdx_oIdx': 'base64String' } 儲存上傳圖片
     worksheet: {
@@ -1172,7 +1172,6 @@ JSON 格式範例：
                     parts: [{ text: userPrompt }]
                 }],
                 generationConfig: {
-                    responseMimeType: "application/json",
                     temperature: 0.6
                 }
             })
@@ -1299,16 +1298,10 @@ function handleFileSelect(file) {
             
             showLoading(false);
             
-            // 提示用戶點擊 AI 生成按鈕，或若有設定 API Key 則自動生成
-            if (state.apiKey) {
-                setTimeout(() => {
-                    if (confirm("檔案解析成功！是否立即讓 AI 根據您的教材內容自動生成學習單？")) {
-                        handleAiGeneration();
-                    }
-                }, 500);
-            } else {
-                alert("檔案解析成功！文字已填入下方。\n請務必填寫上方「Gemini API 金鑰」，然後點擊【🤖 讓 AI 幫我產生學習單】來生成專屬題目！");
-            }
+            // 自動生成 (無須確認)
+            setTimeout(() => {
+                handleAiGeneration();
+            }, 500);
         } catch (error) {
             console.error('檔案解析失敗:', error);
             alert('解析檔案失敗，請確認檔案是否受保護、加密或內容為純掃描圖片：' + error.message);
