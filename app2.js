@@ -759,13 +759,24 @@ function createMcqElement(mcq, index) {
         const imgKey = `${index}_${oIdx}`;
         const customImg = state.customImages[imgKey];
         
+        // 根據字元數動態調整字型大小，避免多個 Emoji 或文字導致換行重疊
+        let fontSizeStyle = '';
+        const charCount = [...emoji].length;
+        if (charCount > 3) {
+            fontSizeStyle = ' style="font-size: 1.5rem;"';
+        } else if (charCount === 3) {
+            fontSizeStyle = ' style="font-size: 2.2rem;"';
+        } else if (charCount === 2) {
+            fontSizeStyle = ' style="font-size: 2.8rem;"';
+        }
+
         // 在圖卡模式與標準模式下共用結構，僅透過 CSS 在 .visual-mode 下觸發大圖卡渲染
         optionsHtml += `
             <div class="option-item" data-oidx="${oIdx}">
                 <div class="option-pic-container" data-qidx="${index}" data-oidx="${oIdx}">
                     ${customImg 
                         ? `<img src="${customImg}" alt="custom-pic">` 
-                        : `<span class="emoji-glyph" contenteditable="true">${emoji}</span>`
+                        : `<span class="emoji-glyph" contenteditable="true"${fontSizeStyle}>${emoji}</span>`
                     }
                     <button class="pic-edit-btn" title="📷 選擇電腦圖片上傳"><i class="fa-solid fa-camera"></i></button>
                     ${customImg 
@@ -969,6 +980,17 @@ function bindEditableElements() {
                     state.worksheet.mcqs[qIdx].emojis = ["❓", "❓", "❓", "❓"];
                 }
                 state.worksheet.mcqs[qIdx].emojis[oIdx] = newEmoji;
+                
+                // 動態調整字型大小，避免多個字元換行重疊
+                const charCount = [...newEmoji].length;
+                glyph.removeAttribute('style'); // 清除舊有的行內樣式
+                if (charCount > 3) {
+                    glyph.style.fontSize = '1.5rem';
+                } else if (charCount === 3) {
+                    glyph.style.fontSize = '2.2rem';
+                } else if (charCount === 2) {
+                    glyph.style.fontSize = '2.8rem';
+                }
             });
         });
     });
