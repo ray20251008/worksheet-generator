@@ -414,6 +414,7 @@ const state = {
     activeTheme: 'pastel',
     bwMode: false,
     visualMode: false, // 特教圖卡/視覺輔助模式
+    showAnswers: false, // 顯示答案 (教師列印用)
     apiKey: '',
     selectedPreset: '',
     customImages: {}, // 格式為 { 'qIdx_oIdx': 'base64String' } 儲存上傳圖片
@@ -443,6 +444,7 @@ const elements = {
     gradeLevelSelect: document.getElementById('grade-level'),
     questionCountSelect: document.getElementById('question-count'),
     layoutSpecialMode: document.getElementById('layout-special-mode'), // 特教模式開關
+    layoutShowAnswers: document.getElementById('layout-show-answers'), // 顯示答案開關
     layoutHeader: document.getElementById('layout-header'),
     layoutIntro: document.getElementById('layout-intro'),
     layoutMcq: document.getElementById('layout-mcq'),
@@ -528,6 +530,14 @@ function bindEvents() {
         }
         renderWorksheet();
     });
+    
+    // 顯示答案 (教師列印用)切換
+    if (elements.layoutShowAnswers) {
+        elements.layoutShowAnswers.addEventListener('change', (e) => {
+            state.showAnswers = e.target.checked;
+            renderWorksheet();
+        });
+    }
     
     // API 金鑰摺疊
     elements.keyToggle.addEventListener('click', () => {
@@ -770,9 +780,10 @@ function createMcqElement(mcq, index) {
             fontSizeStyle = ' style="font-size: 2.8rem;"';
         }
 
+        const isCorrect = state.showAnswers && (oIdx === mcq.correct);
         // 在圖卡模式與標準模式下共用結構，僅透過 CSS 在 .visual-mode 下觸發大圖卡渲染
         optionsHtml += `
-            <div class="option-item" data-oidx="${oIdx}">
+            <div class="option-item${isCorrect ? ' correct' : ''}" data-oidx="${oIdx}">
                 <div class="option-pic-container" data-qidx="${index}" data-oidx="${oIdx}">
                     ${customImg 
                         ? `<img src="${customImg}" alt="custom-pic">` 
@@ -785,7 +796,7 @@ function createMcqElement(mcq, index) {
                     }
                 </div>
                 <span class="option-text" contenteditable="true">(${alphabet[oIdx]}) ${cleanOpt}</span>
-                <div class="option-box"></div>
+                <div class="option-box${isCorrect ? ' correct' : ''}"></div>
             </div>
         `;
     });
@@ -1141,6 +1152,7 @@ async function handleAiGeneration() {
 - 學生特性：無法看懂長句子或複雜詞彙，需要高度依賴「視覺圖卡與 Emojis」來辨識選項意思。
 - 字句極簡化：請將學習單標題、題目、選項字數縮減到極限！題目請控制在 10 個字以內（例如：不要問「當我們感冒打噴嚏時最好的遮擋方式是？」，請直接問「打噴嚏了，怎麼做？」）。選項文字控制在 2~6 個字以內（例如：「戴口罩」、「洗手」）。
 - 強制圖卡配對：必須為每個選擇題選項配置一個極高關聯、極具辨識度且彩色的 Emoji 圖標！(例如：洗手 -> "🧼", 難過 -> "😭")，放置於 JSON 中的 "emojis" 陣列，且順序必須與 "options" 選項完全一致。
+- 嚴格限制單一圖標：每一個選項「只能」配置剛好「一個」Emoji 繪文字圖標（例如 "🧼"），絕對不可以包含中文字（例如錯誤範例 "玩水"）或多個 Emoji 堆疊（例如錯誤範例 "🚶💦"），確保視覺輔助的乾淨與高辨識度。
 - 情境繪圖化：情境題必須是「生活大圖畫題」，問題指示語請一律寫「👉 請畫出你覺得對的行為」。
 `;
 
@@ -1161,7 +1173,8 @@ ${state.visualMode ? specialEducationRules : ""}
 2. **暖身引言 (intro)**：撰寫一段大約 150 字、溫馨且口語流暢的引導說明，做為學習單的暖身引讀。
 3. **選擇題 (mcqs)**：提供 ${count} 題單選題。每題固定有 4 個選項。
    * 重要：選項中請勿包含 "A."、"B." 等字母標記，單純提供乾淨文字。
-   * 重要：必須提供與選項順序一致的 "emojis" 陣列（長度必須為 4），為每個選項配置一個極具代表性的繪文字圖示！
+   * 重要：每個 "emojis" 中的元素必須「只有單一個 Emoji」，絕對不可填入任何中文字或多個 Emoji 組合！
+   * 重要：必須提供 "correct" 屬性，為正確答案的索引值（0 代表第 1 個選項，1 代表第 2 個，2 代表第 3 個，3 代表第 4 個）。
 4. **情境題 (scenarios)**：提供 2 題與主題高度相關的生活實務模擬。
 5. **生活實踐承諾 (pledge)**：提供一個實踐承諾區，包含承諾標題，以及 3 項日常承諾條目。
 
@@ -1176,7 +1189,8 @@ JSON 格式範例：
     {
       "question": "生活化情境問題文字？",
       "options": ["選項一文字", "選項二文字", "選項三文字", "選項四文字"],
-      "emojis": ["🧼", "😷", "❌", "🩺"]
+      "emojis": ["🧼", "😷", "❌", "🩺"],
+      "correct": 1
     }
   ],
   "scenarios": [

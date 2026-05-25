@@ -1609,3 +1609,47 @@ textarea {
     height: 10px;
     border-width: 0 2.2px 2.2px 0;
 }
+
+/* ==========================================================================
+   🔑 教師用答案版專屬樣式 (Teacher Answer Key Styles)
+   ========================================================================== */
+.option-box.correct {
+    background-color: #2ecc71 !important;
+    border-color: #27ae60 !important;
+    position: relative;
+}
+
+.option-box.correct::after {
+    content: '✔';
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.a4-page.visual-mode .option-box.correct {
+    background-color: #2ecc71 !important;
+    border-color: #27ae60 !important;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.a4-page.visual-mode .option-box.correct::after {
+    content: '✔';
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.a4-page.visual-mode .option-item.correct {
+    border-color: #2ecc71 !important;
+    background-color: rgba(46, 204, 113, 0.08) !important;
+}
