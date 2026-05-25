@@ -1436,13 +1436,18 @@ textarea {
     
     .question-item {
         margin-bottom: 14px !important;
-        page-break-inside: auto !important;
-        break-inside: auto !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    
+    .option-item {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
     
     .pledge-container {
-        page-break-inside: auto !important;
-        break-inside: auto !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 }
 
