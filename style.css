@@ -1610,46 +1610,52 @@ textarea {
     border-width: 0 2.2px 2.2px 0;
 }
 
+/* 隱藏選項後方的圓圈 */
+.option-box {
+    display: none !important;
+}
+
 /* ==========================================================================
    🔑 教師用答案版專屬樣式 (Teacher Answer Key Styles)
    ========================================================================== */
-.option-box.correct {
-    background-color: #2ecc71 !important;
-    border-color: #27ae60 !important;
-    position: relative;
+/* 標準模式答案標示 */
+.option-item.correct .option-text {
+    color: #27ae60 !important;
+    font-weight: 700 !important;
 }
 
-.option-box.correct::after {
-    content: '✔';
-    color: white;
-    font-size: 9px;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.option-item.correct .option-text::after {
+    content: ' ✔';
+    color: #27ae60 !important;
+    font-weight: 700 !important;
 }
 
-.a4-page.visual-mode .option-box.correct {
-    background-color: #2ecc71 !important;
-    border-color: #27ae60 !important;
-    position: relative;
-    width: 24px;
-    height: 24px;
-}
-
-.a4-page.visual-mode .option-box.correct::after {
-    content: '✔';
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
+/* 視覺圖卡模式答案標示 */
 .a4-page.visual-mode .option-item.correct {
     border-color: #2ecc71 !important;
     background-color: rgba(46, 204, 113, 0.08) !important;
+    position: relative;
+}
+
+.a4-page.visual-mode .option-item.correct::before {
+    content: '✔';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #2ecc71;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.a4-page.visual-mode .option-item.correct .option-text {
+    color: #27ae60 !important;
 }
