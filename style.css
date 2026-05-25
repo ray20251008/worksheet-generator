@@ -1443,11 +1443,25 @@ textarea {
     }
     
     .question-item {
-        display: inline-block !important;
+        display: block !important;
         width: 100% !important;
         margin-bottom: 14px !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
+    }
+    
+    /* 強制在列印時將選項網格設為 Grid 佈局，避免 Flexbox 造成跨頁切割 Bug */
+    .options-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding-left: 0 !important;
+    }
+    
+    /* 特教視覺模式下圖卡列印寬度修正 */
+    .a4-page.visual-mode .option-item {
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .option-item {
@@ -1456,7 +1470,7 @@ textarea {
     }
     
     .pledge-container {
-        display: inline-block !important;
+        display: block !important;
         width: 100% !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
