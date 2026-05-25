@@ -414,7 +414,7 @@ const state = {
     activeTheme: 'pastel',
     bwMode: false,
     visualMode: false, // 特教圖卡/視覺輔助模式
-    apiKey: 'AIzaSyB9elMJdtiyBmeYELAdpESoU9wgpUSrcLM',
+    apiKey: '',
     selectedPreset: '',
     customImages: {}, // 格式為 { 'qIdx_oIdx': 'base64String' } 儲存上傳圖片
     worksheet: {
@@ -1084,18 +1084,25 @@ function handleOfflineGeneration() {
 
 // --- 11. Gemini AI 智能特教圖卡生成 (Gemini AI Connection with Pictogram Prompt) ---
 async function handleAiGeneration() {
-    const apiKey = state.apiKey;
+    let apiKey = state.apiKey;
     const customContent = elements.customContentTextarea.value.trim();
     const gradeText = elements.gradeLevelSelect.options[elements.gradeLevelSelect.selectedIndex].text;
     const count = elements.questionCountSelect.value;
     const selectedTopicText = elements.presetTopicSelect.options[elements.presetTopicSelect.selectedIndex]?.text || "自訂主題";
     
     if (!apiKey) {
-        alert("💡 貼心提醒：使用「AI 智能生成」需要配置 Gemini API 金鑰 (API Key)。\n已自動為您展開「4. 串接 Gemini AI」區塊，請貼上金鑰後再試一次！\n\n(或者，您可以直接點擊「快速套用範本」來免金鑰離線生成喔！)");
-        elements.keyToggle.classList.add('open');
-        elements.keySettingsContainer.classList.remove('collapsed');
-        elements.geminiApiKeyInput.focus();
-        return;
+        apiKey = prompt("💡 貼心提醒：使用「AI 智能生成」需要配置 Gemini API 金鑰 (API Key)。\n\n請貼上您的 Gemini API 金鑰 (金鑰僅儲存於您的瀏覽器本機中，可以到 Google AI Studio 免費申請)：");
+        if (!apiKey) return;
+        apiKey = apiKey.trim();
+        state.apiKey = apiKey;
+        localStorage.setItem('gemini_api_key', apiKey);
+        if (elements.geminiApiKeyInput) {
+            elements.geminiApiKeyInput.value = apiKey;
+        }
+        if (elements.keySaveStatus) {
+            elements.keySaveStatus.textContent = "已成功載入先前儲存的金鑰！";
+            elements.keySaveStatus.style.color = "#4caf50";
+        }
     }
     
     showLoading(true, state.visualMode ? "AI 正配合「特教視覺圖卡模式」編寫大圖示與簡化字句中..." : "AI 正努力思考中，大約需要 5~10 秒鐘...");
@@ -1214,7 +1221,31 @@ JSON 格式範例：
 
     } catch (error) {
         console.error("AI Generation Error:", error);
-        alert(`❌ AI 生成失敗，原因：\n${error.message}\n\n[排查建议]：\n1. 請確認您的 Gemini API Key 是否輸入正確。\n2. 您可以先點擊「快速套用範本」來使用離線的高品質圖卡學習單！`);
+        
+        // 檢測是否為 API 金鑰錯誤 (金鑰無效、過期、遭洩漏被撤銷等)
+        const errorMsg = error.message || "";
+        if (
+            errorMsg.includes("API key") || 
+            errorMsg.includes("API Key") || 
+            errorMsg.includes("API_KEY") || 
+            errorMsg.includes("key") || 
+            errorMsg.includes("Key") || 
+            errorMsg.includes("leaked") || 
+            errorMsg.includes("revoked")
+        ) {
+            localStorage.removeItem('gemini_api_key');
+            state.apiKey = '';
+            if (elements.geminiApiKeyInput) {
+                elements.geminiApiKeyInput.value = '';
+            }
+            if (elements.keySaveStatus) {
+                elements.keySaveStatus.textContent = "已清除失效的金鑰。";
+                elements.keySaveStatus.style.color = "#f44336";
+            }
+            alert(`❌ AI 生成失敗，原因：\n${error.message}\n\n[系統提示]：\n檢測到 API 金鑰無效或已被撤銷，系統已自動為您從瀏覽器 LocalStorage 清除該金鑰。請重新點擊生成以輸入新的金鑰！`);
+        } else {
+            alert(`❌ AI 生成失敗，原因：\n${error.message}\n\n[排查建議]：\n1. 請確認您的 Gemini API Key 是否輸入正確。\n2. 您可以先點擊「快速套用範本」來使用離線的高品質圖卡學習單！`);
+        }
     } finally {
         showLoading(false);
     }
