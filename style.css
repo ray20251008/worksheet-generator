@@ -1399,7 +1399,8 @@ textarea {
     .a4-page {
         width: 100% !important;
         max-width: 100% !important;
-        min-height: 100% !important;
+        min-height: auto !important;
+        height: auto !important;
         box-shadow: none !important;
         border: none !important;
         padding: 0 !important;
@@ -1435,6 +1436,8 @@ textarea {
     }
     
     .question-item {
+        display: inline-block !important;
+        width: 100% !important;
         margin-bottom: 14px !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
@@ -1446,6 +1449,8 @@ textarea {
     }
     
     .pledge-container {
+        display: inline-block !important;
+        width: 100% !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
