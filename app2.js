@@ -459,6 +459,7 @@ const elements = {
     btnAddQuestion: document.getElementById('btn-add-question'),
     btnClear: document.getElementById('btn-clear'),
     btnPrint: document.getElementById('btn-print'),
+    btnPrintDirect: document.getElementById('btn-print-direct'),
     
     worksheetA4: document.getElementById('worksheet-a4'),
     wsTitle: document.getElementById('ws-title'),
@@ -615,6 +616,11 @@ function bindEvents() {
     elements.btnPrint.addEventListener('click', () => {
         window.print();
     });
+    if (elements.btnPrintDirect) {
+        elements.btnPrintDirect.addEventListener('click', () => {
+            window.print();
+        });
+    }
     
     // 檔案拖曳與上傳
     if (elements.fileDropZone) {
