@@ -1266,15 +1266,24 @@ JSON 格式範例：
         
         // 檢測是否為 API 金鑰錯誤 (金鑰無效、過期、遭洩漏被撤銷等)
         const errorMsg = error.message || "";
-        if (
-            errorMsg.includes("API key") || 
-            errorMsg.includes("API Key") || 
-            errorMsg.includes("API_KEY") || 
-            errorMsg.includes("key") || 
-            errorMsg.includes("Key") || 
-            errorMsg.includes("leaked") || 
-            errorMsg.includes("revoked")
-        ) {
+        const isKeyError = (
+            errorMsg.includes("API key not valid") ||
+            errorMsg.includes("API_KEY_INVALID") ||
+            errorMsg.includes("INVALID_API_KEY") ||
+            errorMsg.includes("leaked") ||
+            errorMsg.includes("revoked") ||
+            errorMsg.includes("API key expired")
+        );
+        const isRateLimit = (
+            errorMsg.includes("high demand") ||
+            errorMsg.includes("quota") ||
+            errorMsg.includes("RESOURCE_EXHAUSTED") ||
+            errorMsg.includes("429") ||
+            errorMsg.includes("rate limit") ||
+            errorMsg.includes("temporarily")
+        );
+
+        if (isKeyError) {
             localStorage.removeItem('gemini_api_key');
             state.apiKey = '';
             if (elements.geminiApiKeyInput) {
@@ -1285,6 +1294,9 @@ JSON 格式範例：
                 elements.keySaveStatus.style.color = "#f44336";
             }
             alert(`❌ AI 生成失敗，原因：\n${error.message}\n\n[系統提示]：\n檢測到 API 金鑰無效或已被撤銷，系統已自動為您從瀏覽器 LocalStorage 清除該金鑰。請重新點擊生成以輸入新的金鑰！`);
+        } else if (isRateLimit) {
+            // 流量超限：不清除 API Key，只提示稍後再試
+            alert(`⏳ AI 目前使用人數較多，請稍後 1~2 分鐘再試一次！\n\n原因：${error.message}\n\n您的 API Key 仍然有效，不需要重新輸入。`);
         } else {
             alert(`❌ AI 生成失敗，原因：\n${error.message}\n\n[排查建議]：\n1. 請確認您的 Gemini API Key 是否輸入正確。\n2. 您可以先點擊「快速套用範本」來使用離線的高品質圖卡學習單！`);
         }
