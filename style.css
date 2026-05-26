@@ -1475,6 +1475,29 @@ textarea {
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
+
+    /* 頁尾：縮小上方間距，避免被單獨推到第二頁 */
+    .worksheet-footer {
+        margin-top: 8px !important;
+        padding-top: 6px !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        break-before: avoid !important;
+        page-break-before: avoid !important;
+    }
+
+    /* 各大段落縮小間距，讓內容更緊湊 */
+    .ws-section {
+        margin-bottom: 10px !important;
+    }
+
+    .questions-list {
+        gap: 8px !important;
+    }
+
+    .question-item {
+        margin-bottom: 8px !important;
+    }
 }
 
 
