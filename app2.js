@@ -257,52 +257,52 @@ const presetTemplatesVisual = {
         }
     },
     gender: {
-        title: "尊重身體小精靈",
-        subtitle: "保護自己，尊重別人！",
-        intro: "泳衣遮住的部位是私密處，不能給別人摸。不舒服要說不行，找老師聊聊。",
+        title: "我的身體是屬於哪種性別",
+        subtitle: "自我探索與情緒調適，長大後的我更棒了！",
+        intro: "喜歡現在的自己，男生女生都很棒！學會關心家人，讓心情變美麗！",
         mcqs: [
             {
-                question: "哪裡是不能給人看或摸的私密部位？",
-                options: ["泳衣遮住的地方", "我們的手掌", "肩膀和背部", "膝蓋和小腿"],
-                emojis: ["🩱", "🤝", "肩", "🦵"]
+                question: "關於自己是男生或女生，哪一種想法最棒？",
+                options: ["喜歡現在的自己，男或女都很棒！", "男生不能哭，女生要溫柔", "和別人不一樣就很奇怪", "只能聽別人的話去生活"],
+                emojis: ["❤️", "😢", "❓", "👤"]
             },
             {
-                question: "被觸摸私密處，該怎麼辦？",
-                options: ["大聲說不行並告狀", "聽對方的話配合他", "害怕忍耐不說", "當作兩個人的秘密"],
-                emojis: ["🛡️", "🙇", "😰", "🍭"]
+                question: "如果想表現自己喜歡的性別樣貌，可以怎麼做？",
+                options: ["用自己喜歡的服裝與髮型打扮", "大聲嘲笑別人奇怪的衣服", "強迫大家穿一樣的衣服", "討厭並排擠和我不一樣的人"],
+                emojis: ["👗", "😂", "👔", "🚫"]
             },
             {
-                question: "難過想哭時，可以嗎？",
-                options: ["難過哭出來沒關係", "男生絕對不能哭", "女生才可以哭", "假裝很高興沒事"],
-                emojis: ["❤️", "😢", "👧", "🎭"]
+                question: "看到跨性別者胸口有手術疤痕（如拿掉胸部），該怎麼想？",
+                options: ["尊重他的選擇，他喜歡、開心就好", "覺得很奇怪，在背後指指點點", "大聲問他為什麼受傷留疤痕", "覺得有疤痕的人就很不好"],
+                emojis: ["🤝", "🗣️", "❓", "❌"]
             },
             {
-                question: "同學哭泣，我們可以怎麼做？",
-                options: ["拿紙巾安慰他、幫忙他", "在旁邊指指點點笑他", "取笑他膽小愛哭", "不理他直接走開"],
-                emojis: ["🤝", "😂", "📢", "🤫"]
+                question: "覺得爸爸媽媽很愛碎碎念時，長大的你可以怎麼做？",
+                options: ["主動幫忙做家事、陪家人聊天", "關上房門不理爸爸媽媽", "對著家人大吼大叫生氣", "把房間弄得更亂來抗議"],
+                emojis: ["🏠", "🚪", "😡", "🌋"]
             },
             {
-                question: "別人抱你覺得熱，可以拒絕嗎？",
-                options: ["可以，勇敢說不行", "一定要讓他抱", "害怕地忍耐下去", "打他一下出氣"],
-                emojis: ["🛡️", "🫂", "😰", "👊"]
+                question: "我們會「生氣」或「難過」，這些心情代表什麼？",
+                options: ["生氣代表在乎，難過代表該休息，它們在保護我", "生氣和難過很不乖，要一直假裝笑", "生氣可以打人，難過可以丟東西", "心情是不能改變的，練習也沒有用"],
+                emojis: ["🛡️", "🚫", "👊", "😭"]
             }
         ],
         scenarios: [
             {
-                scenario: "親戚長輩一直要抱你，但你覺得很不舒服。",
-                question: "👉 請畫出你該怎麼勇敢說不行？"
+                scenario: "新來的男同學想穿裙子、留長頭髮。",
+                question: "👉 請畫出或寫出，你會如何友善對待他？"
             },
             {
-                scenario: "陌生人走過來想要牽你的手。",
-                question: "👉 請畫出你該怎麼逃跑找人幫忙？"
+                scenario: "媽媽今天很累，回家一直對你碎碎念。",
+                question: "👉 請畫出或寫出，你怎麼做貼心小改變或讓自己不生氣？"
             }
         ],
         pledge: {
-            title: "我會好好尊重自己和別人的身體：",
+            title: "我會好好長大，成為棒棒的自己：",
             items: [
-                "不隨便讓人觸摸我的身體，我也尊重別人。",
-                "遇到不舒服的事勇敢大聲說不行。",
-                "立刻告訴老師或爸爸媽媽幫忙。"
+                "喜歡自己的性別與外表，也尊重別人的樣子。",
+                "幫忙做家事，當個貼心、愛家人的好幫手。",
+                "生氣難過時好好休息，練習讓心情變美好。"
             ]
         }
     },
@@ -865,33 +865,31 @@ function setupImageUploadEvents(questionEl, qIdx) {
         const oIdx = parseInt(container.getAttribute('data-oidx'));
         const imgKey = `${qIdx}_${oIdx}`;
         
-        const uploadBtn = container.querySelector('.pic-edit-btn');
         const resetBtn = container.querySelector('.pic-reset-btn');
         
-        // 1. 點擊按鈕選檔上傳
-        if (uploadBtn) {
-            uploadBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // 阻止氣泡觸發其他點擊
-                
-                // 動態建立隱藏 input[file]
-                const input = document.createElement('input');
-                input.type = 'file';
-                input.accept = 'image/*';
-                
-                input.onchange = (event) => {
-                    const file = event.target.files[0];
-                    if (file) {
-                        processImageFile(file, imgKey);
-                    }
-                };
-                input.click();
-            });
-        }
+        // 1. 點擊圖片/Emoji 區域任意處直接觸發選檔上傳
+        container.addEventListener('click', (e) => {
+            // 若點擊重設按鈕則由其專屬事件處理，不觸發上傳
+            if (e.target.closest('.pic-reset-btn')) return;
+            
+            // 動態建立隱藏 input[file]
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            
+            input.onchange = (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    processImageFile(file, imgKey);
+                }
+            };
+            input.click();
+        });
         
         // 2. 點擊重設按鈕回歸預設圖標
         if (resetBtn) {
             resetBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
+                e.stopPropagation(); // 阻止事件冒泡到 container 觸發點擊上傳
                 if (confirm("要清除上傳的圖片並還原回原本的 Emoji 圖示嗎？")) {
                     delete state.customImages[imgKey];
                     renderWorksheet();
