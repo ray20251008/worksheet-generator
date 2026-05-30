@@ -1716,3 +1716,15 @@ textarea {
     margin: 10px auto;
     border-radius: 8px;
 }
+/* 限制題目中貼上的圖片大小 (強制覆蓋) */
+.question-text img,
+.option-text img {
+    max-width: 50% !important;
+    max-height: 250px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 10px auto !important;
+    border-radius: 8px !important;
+}
