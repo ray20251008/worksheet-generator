@@ -1728,3 +1728,37 @@ textarea {
     margin: 10px auto !important;
     border-radius: 8px !important;
 }
+/* =========================================
+   強制限制所有圖片的大小 (包含題目與選項)
+   ========================================= */
+
+/* 1. 限制題目中貼上的圖片大小 */
+.question-text img,
+.option-text img {
+    max-width: 50% !important;
+    max-height: 250px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 10px auto !important;
+    border-radius: 8px !important;
+}
+
+/* 2. 限制選項中(點擊相機)上傳的圖片大小 */
+.option-pic-container img {
+    max-width: 120px !important;    /* 寬度最多 120px */
+    max-height: 120px !important;   /* 高度最多 120px */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+}
+
+/* 如果非視覺模式下，稍微給圖片容器一點空間限制 */
+.option-pic-container {
+    max-width: 150px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
