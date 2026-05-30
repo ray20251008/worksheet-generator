@@ -1706,3 +1706,13 @@ textarea {
 .a4-page.visual-mode .option-item.correct .option-text {
     color: #27ae60 !important;
 }
+/* 限制題目中貼上的圖片大小 */
+.question-text img {
+    max-width: 50%;
+    max-height: 250px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+}
