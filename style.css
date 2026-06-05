@@ -1489,14 +1489,31 @@ textarea {
     .options-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
+        gap: 8px !important;
         padding-left: 0 !important;
     }
     
-    /* 特教視覺模式下圖卡列印寬度修正 */
+    /* 特教視覺模式下列印尺寸縮小，確保兩題能塞進一頁 A4 */
     .a4-page.visual-mode .option-item {
         width: 100% !important;
         box-sizing: border-box !important;
+        padding: 8px !important;
+        min-width: auto !important;
+        gap: 6px !important;
+    }
+
+    .a4-page.visual-mode .option-pic-container {
+        width: 65px !important;
+        height: 65px !important;
+    }
+
+    .a4-page.visual-mode .option-pic-container .emoji-glyph {
+        font-size: 3rem !important;
+    }
+
+    .a4-page.visual-mode .question-text {
+        font-size: 15px !important;
+        margin-bottom: 6px !important;
     }
     
     .option-item {
