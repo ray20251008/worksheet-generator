@@ -1387,6 +1387,11 @@ textarea {
    🖨️ 8. 完美 A4 列印與 PDF 輸出專屬樣式 (Print Optimization Stylesheet)
    ========================================================================== */
 @media print {
+    /* 設定紙張邊界，爭取更多排版空間 */
+    @page {
+        margin: 10mm;
+    }
+
     /* 1. 隱藏瀏覽器 UI、網頁控制面板與提示 */
     body, html {
         background: #ffffff !important;
@@ -1409,6 +1414,8 @@ textarea {
         display: block !important;
         height: auto !important;
         overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     .preview-panel {
@@ -1540,15 +1547,15 @@ textarea {
 
     /* 各大段落縮小間距，讓內容更緊湊 */
     .ws-section {
-        margin-bottom: 10px !important;
+        margin-bottom: 6px !important;
     }
 
     .questions-list {
-        gap: 8px !important;
+        gap: 6px !important;
     }
 
     .question-item {
-        margin-bottom: 8px !important;
+        margin-bottom: 6px !important;
     }
 }
 
