@@ -1474,6 +1474,17 @@ textarea {
         break-inside: avoid !important;
     }
     
+    /* 依據使用者需求：每兩題換一頁，避免排版擁擠 */
+    #mcq-list .question-item:nth-child(even) {
+        page-break-after: always !important;
+        break-after: page !important;
+    }
+    
+    #mcq-list .question-item:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
+    }
+    
     /* 強制在列印時將選項網格設為 Grid 佈局，避免 Flexbox 造成跨頁切割 Bug */
     .options-grid {
         display: grid !important;
