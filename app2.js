@@ -776,7 +776,7 @@ function createMcqElement(mcq, index) {
             fontSizeStyle = ' style="font-size: 1.5rem;"';
         } else if (charCount === 3) {
             fontSizeStyle = ' style="font-size: 2.2rem;"';
-        } else if (charCount === 2) {
+        } else {
             fontSizeStyle = ' style="font-size: 2.8rem;"';
         }
 

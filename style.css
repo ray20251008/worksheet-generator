@@ -1,10 +1,10 @@
 /* ==========================================================================
-   ğŸ¨ å­¸ç¿’å–®è‡ªå‹•ç”¢ç”Ÿå™¨ - å…¨æ–¹ä½ç²¾ç¾æ¨£å¼ç³»çµ± (Style System)
+   ?? ¾Ç²ß³æ¦Û°Ê²£¥Í¾¹ - ¥ş¤è¦ìºë¬ü¼Ë¦¡¨t²Î (Style System)
    ========================================================================== */
 
-/* 1. å…¨åŸŸè®Šæ•¸èˆ‡é‡è¨­ */
+/* 1. ¥ş°ìÅÜ¼Æ»P­«³] */
 :root {
-    /* ç³»çµ± UI è®Šæ•¸ (Glassmorphism å„€è¡¨æ¿ä½¿ç”¨) */
+    /* ¨t²Î UI ÅÜ¼Æ (Glassmorphism »öªíªO¨Ï¥Î) */
     --ui-bg: rgba(255, 255, 255, 0.75);
     --ui-border: rgba(255, 255, 255, 0.4);
     --ui-text: #2d3748;
@@ -13,7 +13,7 @@
     --ui-accent-hover: #5b4bc4;
     --ui-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
     
-    /* å››å¤§ä¸»é¡Œé è¨­å€¼ (é è¨­ç‚º æº«é¦¨é¦¬å¡é¾) */
+    /* ¥|¤j¥DÃD¹w³]­È (¹w³]¬° ·ÅÄÉ°¨¥dÀs) */
     --theme-primary: #ff8fa3;
     --theme-primary-hover: #ff758f;
     --theme-secondary: #c9e4de;
@@ -26,7 +26,7 @@
     --body-font: 'Outfit', 'Noto Sans TC', sans-serif;
 }
 
-/* é‡è¨­ */
+/* ­«³] */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -46,9 +46,9 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. å››å¤§ä¸»é¡Œé…è‰²è¨­å®š */
+/* 2. ¥|¤j¥DÃD°t¦â³]©w */
 
-/* ğŸŒ¸ 1. æº«é¦¨é¦¬å¡é¾ (Pastel Cute) */
+/* ?? 1. ·ÅÄÉ°¨¥dÀs (Pastel Cute) */
 .a4-page.pastel-theme {
     --theme-primary: #ff8fa3;
     --theme-primary-hover: #ff758f;
@@ -60,7 +60,7 @@ body {
     background-color: #ffffff;
 }
 
-/* ğŸŒ² 2. æ£®æ—å¤§è‡ªç„¶ (Forest Nature) */
+/* ?? 2. ´ËªL¤j¦ÛµM (Forest Nature) */
 .a4-page.forest-theme {
     --theme-primary: #2d6a4f;
     --theme-primary-hover: #1b4332;
@@ -72,7 +72,7 @@ body {
     background-color: #ffffff;
 }
 
-/* ğŸ“˜ 3. ç¶“å…¸å­¸é™¢é¢¨ (Classic School) */
+/* ?? 3. ¸g¨å¾Ç°|­· (Classic School) */
 .a4-page.classic-theme {
     --theme-primary: #1a73e8;
     --theme-primary-hover: #155cb4;
@@ -84,7 +84,7 @@ body {
     background-color: #ffffff;
 }
 
-/* ğŸŠ 4. é™½å…‰æœæ°£æ©˜ (Sunset Orange) */
+/* ?? 4. ¶§¥ú´Â®ğ¾ï (Sunset Orange) */
 .a4-page.orange-theme {
     --theme-primary: #ff7b00;
     --theme-primary-hover: #e06a00;
@@ -96,7 +96,7 @@ body {
     background-color: #ffffff;
 }
 
-/* ğŸ–¤ å½±å°æ©Ÿé»‘ç™½è¤‡å°å„ªåŒ–æ¨¡å¼ (ç•¶å•Ÿç”¨æ™‚ï¼Œè¦†å¯«æ‰€æœ‰ä¸»é¡Œé…è‰²ç‚ºé»‘ç™½ç°) */
+/* ?? ¼v¦L¾÷¶Â¥Õ½Æ¦LÀu¤Æ¼Ò¦¡ (·í±Ò¥Î®É¡AÂĞ¼g©Ò¦³¥DÃD°t¦â¬°¶Â¥Õ¦Ç) */
 .a4-page.bw-optimized {
     --theme-primary: #000000 !important;
     --theme-primary-hover: #333333 !important;
@@ -109,14 +109,14 @@ body {
     filter: grayscale(100%);
 }
 
-/* 3. ä¸»è¦ç‰ˆé¢é…ç½® (App Layout) */
+/* 3. ¥D­nª©­±°t¸m (App Layout) */
 .app-container {
     display: flex;
     min-height: 100vh;
     align-items: flex-start;
 }
 
-/* å´é‚Šè¨­å®šé¢æ¿ (Sidebar) - sticky å›ºå®š */
+/* °¼Ãä³]©w­±ªO (Sidebar) - sticky ©T©w */
 .sidebar-panel {
     width: 420px;
     min-width: 420px;
@@ -134,7 +134,7 @@ body {
     overflow-y: auto;
 }
 
-/* å´é‚Šæ¬„é ­éƒ¨ */
+/* °¼ÃäÄæÀY³¡ */
 .sidebar-header {
     padding: 24px;
     border-bottom: 1px solid var(--ui-border);
@@ -170,7 +170,7 @@ body {
     line-height: 1.4;
 }
 
-/* å´é‚Šæ¬„æ»¾å‹•å€ */
+/* °¼ÃäÄæºu°Ê°Ï */
 .sidebar-body {
     flex: 1;
     overflow-y: auto;
@@ -180,7 +180,7 @@ body {
     gap: 24px;
 }
 
-/* è‡ªè¨‚ç¾åŒ–æ»¾å‹•æ¢ */
+/* ¦Û­q¬ü¤Æºu°Ê±ø */
 .sidebar-body::-webkit-scrollbar {
     width: 6px;
 }
@@ -195,7 +195,7 @@ body {
     background: rgba(0, 0, 0, 0.2);
 }
 
-/* è¨­å®šå€å¡Šå¡ç‰‡ */
+/* ³]©w°Ï¶ô¥d¤ù */
 .config-section {
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.8);
@@ -225,7 +225,7 @@ body {
     color: var(--ui-accent);
 }
 
-/* è¦–è¦ºé¢¨æ ¼é¸å–å™¨ç¶²æ ¼ */
+/* µøÄ±­·®æ¿ï¨ú¾¹ºô®æ */
 .theme-selector-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -279,7 +279,7 @@ body {
     border-top: 1px dashed rgba(0, 0, 0, 0.08);
 }
 
-/* è¼¸å…¥æ¡†æ¨£å¼ */
+/* ¿é¤J®Ø¼Ë¦¡ */
 .form-group {
     margin-bottom: 16px;
 }
@@ -352,7 +352,7 @@ textarea {
     flex: 1;
 }
 
-/* è¤‡é¸æŒ‰éˆ•ç¾¤çµ„ */
+/* ½Æ¿ï«ö¶s¸s²Õ */
 .checkbox-group {
     display: flex;
     flex-direction: column;
@@ -376,7 +376,7 @@ textarea {
     cursor: pointer;
 }
 
-/* API é‡‘é‘°æ‘ºç–Šå€ */
+/* API ª÷Æ_ºPÅ|°Ï */
 .key-section {
     border: 1px solid rgba(108, 92, 231, 0.2);
     background: rgba(108, 92, 231, 0.02);
@@ -451,7 +451,7 @@ textarea {
     font-weight: 500;
 }
 
-/* å´é‚Šæ¬„å°¾éƒ¨ */
+/* °¼ÃäÄæ§À³¡ */
 .sidebar-footer {
     padding: 20px 24px;
     border-top: 1px solid var(--ui-border);
@@ -503,7 +503,7 @@ textarea {
     background: rgba(108, 92, 231, 0.05);
 }
 
-/* 4. å³æ™‚é è¦½é¢æ¿ (Preview Panel) */
+/* 4. §Y®É¹wÄı­±ªO (Preview Panel) */
 .preview-panel {
     flex: 1;
     display: flex;
@@ -594,7 +594,7 @@ textarea {
     border-color: #1a202c;
 }
 
-/* A4 ç´™å¼µæ»¾å‹•å®¹å™¨ - è®“ç€è¦½å™¨è‡ªç„¶æ²å‹• */
+/* A4 ¯È±iºu°Ê®e¾¹ - ÅıÂsÄı¾¹¦ÛµM±²°Ê */
 .a4-page-wrapper {
     flex: 1;
     padding: 40px 20px;
@@ -603,7 +603,7 @@ textarea {
     align-items: flex-start;
 }
 
-/* ç¾åŒ– A4 é è¦½æ²è»¸ */
+/* ¬ü¤Æ A4 ¹wÄı±²¶b */
 .a4-page-wrapper::-webkit-scrollbar {
     width: 10px;
 }
@@ -619,7 +619,7 @@ textarea {
     background: rgba(0, 0, 0, 0.25);
 }
 
-/* 5. æ“¬çœŸ A4 ç´™å¼µæ¨£å¼ (Simulated A4 Paper Sheet) */
+/* 5. ÀÀ¯u A4 ¯È±i¼Ë¦¡ (Simulated A4 Paper Sheet) */
 .a4-page {
     width: 210mm;
     min-height: 297mm;
@@ -637,7 +637,7 @@ textarea {
     overflow: visible;
 }
 
-/* å­¸ç¿’å–®æ¨™é ­å€ */
+/* ¾Ç²ß³æ¼ĞÀY°Ï */
 .worksheet-header {
     text-align: center;
     margin-bottom: 24px;
@@ -645,7 +645,7 @@ textarea {
     padding-bottom: 12px;
 }
 
-/* è£é£¾æ€§é›™åœ“é»èƒŒæ™¯ (å¢æ·»ç«¥è¶£ç²¾ç·»æ„Ÿ) */
+/* ¸Ë¹¢©ÊÂù¶êÂI­I´º (¼W²Kµ£½ìºë½o·P) */
 .decoration-dots-left, .decoration-dots-right {
     position: absolute;
     top: 50%;
@@ -695,7 +695,7 @@ textarea {
     transition: all 0.2s ease;
 }
 
-/* å­¸ç”ŸåŸºæœ¬è³‡è¨Šå¡«å¯«æ¬„ä½ */
+/* ¾Ç¥Í°ò¥»¸ê°T¶ñ¼gÄæ¦ì */
 .student-info-bar {
     display: flex;
     justify-content: center;
@@ -722,7 +722,7 @@ textarea {
     display: inline-block;
 }
 
-/* å­¸ç¿’å–®ä¸»é«”èˆ‡å¤§å–®å…ƒ */
+/* ¾Ç²ß³æ¥DÅé»P¤j³æ¤¸ */
 .worksheet-body {
     flex: 1;
     display: flex;
@@ -762,7 +762,7 @@ textarea {
     font-size: 14px;
 }
 
-/* å¼•è¨€æ•…äº‹æ¡† */
+/* ¤Ş¨¥¬G¨Æ®Ø */
 .passage-box {
     background: var(--theme-bg-light);
     border-left: 4px solid var(--theme-primary);
@@ -776,14 +776,14 @@ textarea {
     border-bottom: 1px solid var(--theme-secondary);
 }
 
-/* é¡Œç›®åˆ—è¡¨æ’ç‰ˆ */
+/* ÃD¥Ø¦Cªí±Æª© */
 .questions-list {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-/* å–®ä¸€é¡Œç›®å®¹å™¨ */
+/* ³æ¤@ÃD¥Ø®e¾¹ */
 .question-item {
     position: relative;
     padding: 10px 12px;
@@ -798,7 +798,7 @@ textarea {
     border-color: var(--theme-secondary);
 }
 
-/* é¡Œç›®ç·¨è¼¯èˆ‡æ§åˆ¶æŒ‰éˆ• (Hover æ™‚é¡¯ç¤º) */
+/* ÃD¥Ø½s¿è»P±±¨î«ö¶s (Hover ®ÉÅã¥Ü) */
 .item-controls {
     position: absolute;
     right: 8px;
@@ -847,17 +847,17 @@ textarea {
     cursor: grab;
 }
 
-/* é¡Œå¹¹æ¨£å¼ */
+/* ÃD·F¼Ë¦¡ */
 .question-text {
     font-size: 13.5px;
     font-weight: 700;
     line-height: 1.5;
     margin-bottom: 8px;
     outline: none;
-    padding-right: 48px; /* é¿é–‹æ§åˆ¶æŒ‰éˆ• */
+    padding-right: 48px; /* Á×¶}±±¨î«ö¶s */
 }
 
-/* é¸æ“‡é¡Œé¸é … */
+/* ¿ï¾ÜÃD¿ï¶µ */
 .options-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -872,12 +872,12 @@ textarea {
     font-size: 12.5px;
 }
 
-/* å¯æ„›çš„å¤šé¸æ¡†/å–®é¸æ¡†è¤‡è£½å“ (ä»¥åˆ©åˆ—å°) */
+/* ¥i·Rªº¦h¿ï®Ø/³æ¿ï®Ø½Æ»s«~ (¥H§Q¦C¦L) */
 .option-box {
     width: 14px;
     height: 14px;
     border: 1.5px solid var(--theme-primary);
-    border-radius: 50%; /* åœ“åœˆåœ“è§’ */
+    border-radius: 50%; /* ¶ê°é¶ê¨¤ */
     flex-shrink: 0;
 }
 
@@ -886,7 +886,7 @@ textarea {
     flex: 1;
 }
 
-/* æƒ…å¢ƒä½œç­”é¡Œ (æ€è€ƒèˆ‡æ‰‹ç¹ª) */
+/* ±¡¹Ò§@µªÃD («ä¦Ò»P¤âÃ¸) */
 .scenario-answer-box {
     margin-top: 10px;
     border: 1.5px dashed var(--theme-border);
@@ -909,7 +909,7 @@ textarea {
     pointer-events: none;
 }
 
-/* å›æ‡‰æ–‡å­—æ¬„ç·š (ç‰¹æ•™/å°å­¸å¸¸ç”¨è¼”åŠ©æ›¸å¯«ç·š) */
+/* ¦^À³¤å¦rÄæ½u (¯S±Ğ/¤p¾Ç±`¥Î»²§U®Ñ¼g½u) */
 .answer-lines {
     width: 100%;
     display: flex;
@@ -923,7 +923,7 @@ textarea {
     height: 12px;
 }
 
-/* æˆ‘çš„å®£å‘Š/å¯¦è¸æ‰¿è«¾å€ */
+/* §Úªº«Å§i/¹ê½î©Ó¿Õ°Ï */
 .pledge-container {
     background: var(--theme-bg-light);
     border: 2px solid var(--theme-primary);
@@ -984,7 +984,7 @@ textarea {
     outline: none;
 }
 
-/* å­¸ç¿’å–®å°¾éƒ¨æ¨™è¨˜ */
+/* ¾Ç²ß³æ§À³¡¼Ğ°O */
 .worksheet-footer {
     text-align: center;
     margin-top: 24px;
@@ -999,7 +999,7 @@ textarea {
     outline: none;
 }
 
-/* 6. å‹•æ…‹è¼‰å…¥è¼‰å…¥ç•«é¢ (Loading Modal) */
+/* 6. °ÊºA¸ü¤J¸ü¤Jµe­± (Loading Modal) */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -1098,7 +1098,7 @@ textarea {
     animation: loading-slide 1.8s infinite ease-in-out;
 }
 
-/* 7. Keyframe å‹•ç•«é›† */
+/* 7. Keyframe °Êµe¶° */
 @keyframes sparkle {
     0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px var(--ui-accent)); }
     100% { transform: scale(1.15) rotate(15deg); filter: drop-shadow(0 0 8px #a29bfe); }
@@ -1123,16 +1123,16 @@ textarea {
 
 
 /* ==========================================================================
-   ğŸ§© 7.5. ç‰¹æ•™åœ–å¡èˆ‡è¦–è¦ºè¼”åŠ©æ¨¡å¼å°ˆå±¬æ¨£å¼ (Special Education Visual Mode)
+   ?? 7.5. ¯S±Ğ¹Ï¥d»PµøÄ±»²§U¼Ò¦¡±MÄİ¼Ë¦¡ (Special Education Visual Mode)
    ========================================================================== */
 
-/* ç•¶å­¸ç¿’å–®é–‹å•Ÿè¦–è¦ºè¼”åŠ©æ¨¡å¼æ™‚çš„æ•´é«”å„ªåŒ– */
+/* ·í¾Ç²ß³æ¶}±ÒµøÄ±»²§U¼Ò¦¡®Éªº¾ãÅéÀu¤Æ */
 .a4-page.visual-mode {
     font-size: 15px;
 }
 
 .a4-page.visual-mode .worksheet-title {
-    font-size: 32px; /* æ¨™é¡Œæ”¾å¤§ */
+    font-size: 32px; /* ¼ĞÃD©ñ¤j */
 }
 
 .a4-page.visual-mode .worksheet-subtitle {
@@ -1157,7 +1157,7 @@ textarea {
     line-height: 1.6;
 }
 
-/* è¦–è¦ºåœ–å¡é¸é …æ’ç‰ˆ */
+/* µøÄ±¹Ï¥d¿ï¶µ±Æª© */
 .a4-page.visual-mode .options-grid {
     display: flex;
     flex-wrap: wrap;
@@ -1192,7 +1192,7 @@ textarea {
     background: #ffffff;
 }
 
-/* åœ–ç‰‡/åœ–æ¨™å®¹å™¨ */
+/* ¹Ï¤ù/¹Ï¼Ğ®e¾¹ */
 .option-pic-container {
     cursor: pointer;
     transition: all 0.2s ease;
@@ -1252,13 +1252,13 @@ textarea {
     border-radius: 10px;
 }
 
-/* åœ–ç‰‡æ‹–æ›³ä¸­ç‹€æ…‹é«˜äº® */
+/* ¹Ï¤ù©ì¦²¤¤ª¬ºA°ª«G */
 .a4-page.visual-mode .option-pic-container.drag-over {
     border: 3px dashed var(--ui-accent) !important;
     background: rgba(108, 92, 231, 0.08) !important;
 }
 
-/* åœ–ç‰‡æ›´æ›æµ®å‹•æŒ‰éˆ• */
+/* ¹Ï¤ù§ó´«¯B°Ê«ö¶s */
 .pic-edit-btn, .pic-reset-btn {
     position: absolute;
     width: 26px;
@@ -1299,7 +1299,7 @@ textarea {
 .pic-edit-btn:hover { background: var(--ui-accent-hover); transform: scale(1.15) !important; }
 .pic-reset-btn:hover { background: #e04040; transform: scale(1.15) !important; }
 
-/* å¤§å‹ä½œç­”åœˆåœˆ */
+/* ¤j«¬§@µª°é°é */
 .a4-page.visual-mode .option-box {
     width: 24px;
     height: 24px;
@@ -1316,9 +1316,9 @@ textarea {
     width: 100%;
 }
 
-/* æƒ…å¢ƒé¡Œå¤§ç•«æ¡†èˆ‡æ‰‹ç¹ªæç¤º */
+/* ±¡¹ÒÃD¤jµe®Ø»P¤âÃ¸´£¥Ü */
 .a4-page.visual-mode .scenario-answer-box {
-    min-height: 150px; /* å¢åŠ ä½œç­”ç©ºé–“ */
+    min-height: 150px; /* ¼W¥[§@µªªÅ¶¡ */
     border: 2.5px dashed var(--theme-primary);
     background-color: #fcfcfd;
     background-image: radial-gradient(var(--theme-border) 1.2px, transparent 1.2px);
@@ -1342,7 +1342,7 @@ textarea {
 }
 
 .a4-page.visual-mode .scenario-answer-box::after {
-    content: 'ğŸ¨ è«‹åœ¨æ¡†æ¡†å…§ç•«å‡ºï¼ˆæˆ–å¯«å‡ºï¼‰ä½ çš„åšæ³•ï¼';
+    content: '?? ½Ğ¦b®Ø®Ø¤ºµe¥X¡]©Î¼g¥X¡^§Aªº°µªk¡I';
     font-size: 12px;
     font-weight: 700;
     color: var(--ui-text-light);
@@ -1350,7 +1350,7 @@ textarea {
 }
 
 .a4-page.visual-mode .scenario-answer-box .answer-lines {
-    display: none; /* è¦–è¦ºæ¨¡å¼ä¸‹éš±è—æ–‡å­—ç·š */
+    display: none; /* µøÄ±¼Ò¦¡¤UÁôÂÃ¤å¦r½u */
 }
 
 @keyframes bounce-gentle {
@@ -1358,7 +1358,7 @@ textarea {
     100% { transform: translateY(-6px); }
 }
 
-/* å¯¦è¸å®£å‘Šå€å„ªåŒ– */
+/* ¹ê½î«Å§i°ÏÀu¤Æ */
 .a4-page.visual-mode .pledge-container {
     padding: 18px 22px;
     border-width: 2.5px;
@@ -1384,15 +1384,15 @@ textarea {
 }
 
 /* ==========================================================================
-   ğŸ–¨ï¸ 8. å®Œç¾ A4 åˆ—å°èˆ‡ PDF è¼¸å‡ºå°ˆå±¬æ¨£å¼ (Print Optimization Stylesheet)
+   ??? 8. §¹¬ü A4 ¦C¦L»P PDF ¿é¥X±MÄİ¼Ë¦¡ (Print Optimization Stylesheet)
    ========================================================================== */
 @media print {
-    /* è¨­å®šç´™å¼µé‚Šç•Œï¼Œçˆ­å–æ›´å¤šæ’ç‰ˆç©ºé–“ */
+    /* ³]©w¯È±iÃä¬É¡Aª§¨ú§ó¦h±Æª©ªÅ¶¡ */
     @page {
         margin: 10mm;
     }
 
-    /* 1. éš±è—ç€è¦½å™¨ UIã€ç¶²é æ§åˆ¶é¢æ¿èˆ‡æç¤º */
+    /* 1. ÁôÂÃÂsÄı¾¹ UI¡Bºô­¶±±¨î­±ªO»P´£¥Ü */
     body, html {
         background: #ffffff !important;
         color: #000000 !important;
@@ -1409,7 +1409,7 @@ textarea {
         display: none !important;
     }
     
-    /* 2. é‡è¨­ä¸»è¦æ’ç‰ˆï¼Œè®“ A4 é é¢å–®ç¨å‘ˆç¾ */
+    /* 2. ­«³]¥D­n±Æª©¡AÅı A4 ­¶­±³æ¿W§e²{ */
     .app-container {
         display: block !important;
         height: auto !important;
@@ -1433,7 +1433,7 @@ textarea {
         height: auto !important;
     }
     
-    /* 3. A4 å¯¦é«”é…ç½®ï¼Œæ¶ˆé™¤è¢å¹•å°ˆç”¨é™°å½±èˆ‡é‚Šç•Œ */
+    /* 3. A4 ¹êÅé°t¸m¡A®ø°£¿Ã¹õ±M¥Î³±¼v»PÃä¬É */
     .a4-page {
         width: 100% !important;
         max-width: 100% !important;
@@ -1453,14 +1453,14 @@ textarea {
         display: block !important;
     }
     
-    /* 4. å¼·åˆ¶ç€è¦½å™¨åˆ—å°èƒŒæ™¯åœ–ã€é¡è‰²èˆ‡æ¡†ç·š (ç¢ºä¿é¦¬å¡é¾æˆ–é»‘ç™½æ¨£å¼èƒ½å®Œç¾åˆ—å°) */
+    /* 4. ±j¨îÂsÄı¾¹¦C¦L­I´º¹Ï¡BÃC¦â»P®Ø½u (½T«O°¨¥dÀs©Î¶Â¥Õ¼Ë¦¡¯à§¹¬ü¦C¦L) */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         color-adjust: exact !important;
     }
     
-    /* 5. åˆ†é è¨­å®šï¼Œé¿å…å¤§é¡Œç›®è¢«æ””è…°æˆªæ–· */
+    /* 5. ¤À­¶³]©w¡AÁ×§K¤jÃD¥Ø³QÄd¸yºIÂ_ */
     .ws-section {
         margin-bottom: 20px !important;
     }
@@ -1477,22 +1477,16 @@ textarea {
         display: block !important;
         width: 100% !important;
         margin-bottom: 14px !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
     }
     
-    /* ä¾æ“šä½¿ç”¨è€…éœ€æ±‚ï¼šæ¯å…©é¡Œæ›ä¸€é ï¼Œé¿å…æ’ç‰ˆæ“æ“  */
-    #mcq-list .question-item:nth-child(even) {
-        page-break-after: always !important;
-        break-after: page !important;
-    }
+    /* ¨Ì¾Ú¨Ï¥ÎªÌ»İ¨D¡G¨C¨âÃD´«¤@­¶¡AÁ×§K±Æª©¾ÖÀ½ */
     
-    #mcq-list .question-item:last-child {
-        page-break-after: auto !important;
-        break-after: auto !important;
-    }
     
-    /* å¼·åˆ¶åœ¨åˆ—å°æ™‚å°‡é¸é …ç¶²æ ¼è¨­ç‚º Grid ä½ˆå±€ï¼Œé¿å… Flexbox é€ æˆè·¨é åˆ‡å‰² Bug */
+    
+    
+    /* ±j¨î¦b¦C¦L®É±N¿ï¶µºô®æ³]¬° Grid §G§½¡AÁ×§K Flexbox ³y¦¨¸ó­¶¤Á³Î Bug */
     .options-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -1500,7 +1494,7 @@ textarea {
         padding-left: 0 !important;
     }
     
-    /* ç‰¹æ•™è¦–è¦ºæ¨¡å¼ä¸‹åˆ—å°å°ºå¯¸ç¸®å°ï¼Œç¢ºä¿å…©é¡Œèƒ½å¡é€²ä¸€é  A4 */
+    /* ¯S±ĞµøÄ±¼Ò¦¡¤U¦C¦L¤Ø¤oÁY¤p¡A½T«O¨âÃD¯à¶ë¶i¤@­¶ A4 */
     .a4-page.visual-mode .option-item {
         width: 100% !important;
         box-sizing: border-box !important;
@@ -1535,7 +1529,7 @@ textarea {
         break-inside: avoid !important;
     }
 
-    /* é å°¾ï¼šç¸®å°ä¸Šæ–¹é–“è·ï¼Œé¿å…è¢«å–®ç¨æ¨åˆ°ç¬¬äºŒé  */
+    /* ­¶§À¡GÁY¤p¤W¤è¶¡¶Z¡AÁ×§K³Q³æ¿W±À¨ì²Ä¤G­¶ */
     .worksheet-footer {
         margin-top: 8px !important;
         padding-top: 6px !important;
@@ -1545,7 +1539,7 @@ textarea {
         page-break-before: avoid !important;
     }
 
-    /* å„å¤§æ®µè½ç¸®å°é–“è·ï¼Œè®“å…§å®¹æ›´ç·Šæ¹Š */
+    /* ¦U¤j¬q¸¨ÁY¤p¶¡¶Z¡AÅı¤º®e§óºò´ê */
     .ws-section {
         margin-bottom: 6px !important;
     }
@@ -1561,7 +1555,7 @@ textarea {
 
 
 /* ==========================================================================
-   ğŸ« è²¡åœ˜æ³•äººå¤©ä¸»æ•™å˜‰ç¾©æ•™å€é™„è¨­é›²æ—ç¸£ç§ç«‹è¯è–å®¶åœ’-ç‘ç¿”ç¤¾å€æ—¥é–“ä½œæ¥­æ‰€ å®¢è£½åŒ–æ¨£å¼
+   ?? °]¹Îªk¤H¤Ñ¥D±Ğ¹Å¸q±Ğ°Ïªş³]¶³ªL¿¤¨p¥ßµØ¸t®a¶é-·çµ¾ªÀ°Ï¤é¶¡§@·~©Ò «È»s¤Æ¼Ë¦¡
    ========================================================================== */
 
 .header-org-title {
@@ -1706,27 +1700,27 @@ textarea {
     border-width: 0 2.2px 2.2px 0;
 }
 
-/* éš±è—é¸é …å¾Œæ–¹çš„åœ“åœˆ */
+/* ÁôÂÃ¿ï¶µ«á¤èªº¶ê°é */
 .option-box {
     display: none !important;
 }
 
 /* ==========================================================================
-   ğŸ”‘ æ•™å¸«ç”¨ç­”æ¡ˆç‰ˆå°ˆå±¬æ¨£å¼ (Teacher Answer Key Styles)
+   ?? ±Ğ®v¥Îµª®×ª©±MÄİ¼Ë¦¡ (Teacher Answer Key Styles)
    ========================================================================== */
-/* æ¨™æº–æ¨¡å¼ç­”æ¡ˆæ¨™ç¤º */
+/* ¼Ğ·Ç¼Ò¦¡µª®×¼Ğ¥Ü */
 .option-item.correct .option-text {
     color: #27ae60 !important;
     font-weight: 700 !important;
 }
 
 .option-item.correct .option-text::after {
-    content: ' âœ”';
+    content: ' ?';
     color: #27ae60 !important;
     font-weight: 700 !important;
 }
 
-/* è¦–è¦ºåœ–å¡æ¨¡å¼ç­”æ¡ˆæ¨™ç¤º */
+/* µøÄ±¹Ï¥d¼Ò¦¡µª®×¼Ğ¥Ü */
 .a4-page.visual-mode .option-item.correct {
     border-color: #2ecc71 !important;
     background-color: rgba(46, 204, 113, 0.08) !important;
@@ -1734,7 +1728,7 @@ textarea {
 }
 
 .a4-page.visual-mode .option-item.correct::before {
-    content: 'âœ”';
+    content: '?';
     position: absolute;
     top: 8px;
     right: 8px;
@@ -1755,7 +1749,7 @@ textarea {
 .a4-page.visual-mode .option-item.correct .option-text {
     color: #27ae60 !important;
 }
-/* é™åˆ¶é¡Œç›®ä¸­è²¼ä¸Šçš„åœ–ç‰‡å¤§å° */
+/* ­­¨îÃD¥Ø¤¤¶K¤Wªº¹Ï¤ù¤j¤p */
 .question-text img {
     max-width: 50%;
     max-height: 250px;
@@ -1765,7 +1759,7 @@ textarea {
     margin: 10px auto;
     border-radius: 8px;
 }
-/* é™åˆ¶é¡Œç›®ä¸­è²¼ä¸Šçš„åœ–ç‰‡å¤§å° (å¼·åˆ¶è¦†è“‹) */
+/* ­­¨îÃD¥Ø¤¤¶K¤Wªº¹Ï¤ù¤j¤p (±j¨îÂĞ»\) */
 .question-text img,
 .option-text img {
     max-width: 50% !important;
@@ -1778,10 +1772,10 @@ textarea {
     border-radius: 8px !important;
 }
 /* =========================================
-   å¼·åˆ¶é™åˆ¶æ‰€æœ‰åœ–ç‰‡çš„å¤§å° (åŒ…å«é¡Œç›®èˆ‡é¸é …)
+   ±j¨î­­¨î©Ò¦³¹Ï¤ùªº¤j¤p (¥]§tÃD¥Ø»P¿ï¶µ)
    ========================================= */
 
-/* 1. é™åˆ¶é¡Œç›®ä¸­è²¼ä¸Šçš„åœ–ç‰‡å¤§å° */
+/* 1. ­­¨îÃD¥Ø¤¤¶K¤Wªº¹Ï¤ù¤j¤p */
 .question-text img,
 .option-text img {
     max-width: 50% !important;
@@ -1794,20 +1788,22 @@ textarea {
     border-radius: 8px !important;
 }
 
-/* 2. é™åˆ¶é¸é …ä¸­(é»æ“Šç›¸æ©Ÿ)ä¸Šå‚³çš„åœ–ç‰‡å¤§å° */
+/* 2. ­­¨î¿ï¶µ¤¤(ÂIÀ»¬Û¾÷)¤W¶Çªº¹Ï¤ù¤j¤p */
 .option-pic-container img {
-    max-width: 120px !important;    /* å¯¬åº¦æœ€å¤š 120px */
-    max-height: 120px !important;   /* é«˜åº¦æœ€å¤š 120px */
+    max-width: 120px !important;    /* ¼e«×³Ì¦h 120px */
+    max-height: 120px !important;   /* °ª«×³Ì¦h 120px */
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
     border-radius: 8px !important;
 }
 
-/* å¦‚æœéè¦–è¦ºæ¨¡å¼ä¸‹ï¼Œç¨å¾®çµ¦åœ–ç‰‡å®¹å™¨ä¸€é»ç©ºé–“é™åˆ¶ */
+/* ¦pªG«DµøÄ±¼Ò¦¡¤U¡Aµy·Lµ¹¹Ï¤ù®e¾¹¤@ÂIªÅ¶¡­­¨î */
 .option-pic-container {
     max-width: 150px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
 }
+
+
